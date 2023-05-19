@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<meta name="referrer" content="no-referrer" />
+    <title>TLMMiner ป้องกัน BAN IP ลื่น ๆ ปลอดภัย ใช้งานฟรี.</title>
+    <meta property="og:title" content="การันตี คนใช้งานมากว่า 10,000 user ปลอดภัยแน่นอน 100 %">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://TLMMINER.com/">
+    <link rel="apple-touch-icon" href="https://tlmminer.com/favicon.ico">
+    <meta property="og:image" content="https://tlmminer.com/image/ogfbs.png">
+    <meta property="og:site_name" content="TLMMINER" />
+    <meta property="og:description" content="ใช้งานฟรี เว็บลื่น ปลอดภัย ป้องกัน Ban IP Wax ฟังชั่นมากมาย">
+    <link rel="shortcut icon" href="/favicon.ico?v=237" />
+    <link rel="stylesheet" href="./js/style.css?v=244" />
+    <link href="css/ae.css?v=244" rel="stylesheet" />
+    <link href="css/main.css?v=244" rel="stylesheet" />
+    <script src="./js/sweetalert2@11"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <script src="./js/jquery-3.5.1.min.js?v=237" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="./js/bootstrap.min.js?v=237" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./js/waxjs.js?v=237" type="text/javascript"></script>
+   <!-- <script src="./js/atommic.bundle.js" type="text/javascript"></script>
+    <script src="./js/atommic.message_handler.js?v=237" type="text/javascript"></script>-->
+	<script src="./js/bundle.js" type="text/javascript"></script>
+    <script src="./js/message_handler.js?v=237" type="text/javascript"></script>
+    <script src="./js/moment.js?v=237" type="text/javascript"></script>
+    <script src="./js/claim.js?v=237" type="text/javascript"></script>
+    <script src="./js/bot.js?v=237" type="text/javascript"></script>
+	<script src="./js/modules.js?v=244" type="text/javascript"></script>
+</head>
+
+
+<body>
+    <nav class="navbar fixed-top navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="https://tlmminer.com"><i class="fab fa-drupal fa-2x">T</i>LMMINER LITE</a>
+
+
+            <div class="btn-group">
+                <label class="toggle mr-3 tooltip">
+                    <span class="onoff"><b>Lite Mode</b></span>
+                    <input type="checkbox" id="litemode" name="litemode" onchange="litemode()"  />
+                    <span class="slider round"></span>
+					<span class="tooltiptext"><b>โหมด Lite</b><br>• เป็นโหมดที่ไม่ดึง API เลย <br><u>เหมาะสำหรับเปิดหลายจอ</u> </span>
+                  </label>
+                <button id="btn-controller" onclick="copyToClipboard('#text-user')" class="btn btn-outline-light my-2 my-sm-0 mr-2 btn-sm">
+                   <i class="fas fa-user-astronaut"></i> <p><span id="text-user"> เข้าสู่ระบบ</span></button></a>
+
+            </div>
+            <div id="navinfo" class="btn-group text-right" style="zoom:87%; text-align: right;">
+                <button class="btn-sm btn-outline-light mr-1 mt-3"> <i class='fab fa-ethereum'></i> <span id='text-balance'>00.00 TLM</span> / <span id='text-balance-tlm-thb'>000 บ.</span></button>
+                <button class="btn-sm btn-outline-light mr-1 mt-3">  <i class='fas fa-sun'></i> <span id='text-balance-wax'>00.00 WAX</span> / <span id='text-balance-wax-thb'>000 บ.</span></button>
+                <button class="btn-sm btn-outline-light mr-1 mt-3"> <i class='fas fa-microchip'></i> <span id='text-balance-STAKE'>00.00 WAX</span> / <span id='text-balance-stacks-thb'>000 บ.</span></button>
+                <button class="btn-sm btn-outline-light mr-1 mt-3"  style="display:none" >  <i class='fas fa-bolt'></i> CPU <span id='text-balance-cpu'>00%</span></button>
+                <button class="btn-sm btn-outline-light mr-1 mt-3" onclick="bott.nftvip()"><span id='text-vip'><i class="fas fa-ban"></i> NOVIP </span></button>
+                <button class="btn-sm btn-outline-light mr-1 mt-3" onclick="bott.nftvip()"><img id="item_tlms0" width="25" src="https://tlmminer.com/image/novip.jpg"></button><br>
+            </div>
+        </div>
+    </nav>
+	<input type="text" class="form-control-center form-control-sm" id="text-config" name="text-config" style="width: 10; height: 0px; opacity:0;">
+<div id="ratewax" class="container mt-5">
+    <div class="coin-marquee-wrapper coin-marquee-wrapper--dark coin-marquee-wrapper--transparent">
+       <!-- <marquee scrollamount="1" behavior="ALTERNATE"> -->
+
+            <div class="coin-marquee-item ">
+                <a class="coin-marquee-item-inner " onclick="bott.WaxNew()" href="# ">
+                    <div class="coin-marquee-item__icon ">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="coin-marquee-item-info ">
+                        <div class="coin-marquee-item-info__row ">
+                            <div class="coin-marquee-item-name ">อัตรา RATE SWAP</div>
+                            <div class="coin-marquee-item-price "><span id="text-swap">0.00</span></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="coin-marquee-item">
+                <a class="coin-marquee-item-inner " onclick="bott.WaxNew()" href="#">
+                    <div class="coin-marquee-item__icon ">
+                        <img src="https://s2.coinmarketcap.com/static/img/coins/32x32/2300.png ">
+                    </div>
+                    <div class="coin-marquee-item-info ">
+                        <div class="coin-marquee-item-info__row ">
+                            <div class="coin-marquee-item-name ">ราคา WAX ล่าสุด</div>
+                            <div class="coin-marquee-item-price "><span id="text-wax">฿0.00 บาท</span></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="coin-marquee-item ">
+                <a class="coin-marquee-item-inner " onclick="bott.WaxNew()" href="# ">
+                    <div class="coin-marquee-item__icon ">
+                        <img src="https://s2.coinmarketcap.com/static/img/coins/32x32/9119.png ">
+                    </div>
+                    <div class="coin-marquee-item-info ">
+                        <div class="coin-marquee-item-info__row ">
+                            <div class="coin-marquee-item-name ">ราคา TLM ล่าสุด</div>
+                            <div class="coin-marquee-item-price "><span id="text-tlm">฿ 0.00 บาท</span></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--   <div class="coin-marquee-item ">
+                <a class="coin-marquee-item-inner " href="# ">
+                    <div class="coin-marquee-item__icon ">
+                        <img src="/image/32xico.png ">
+                    </div>
+                    <div class="coin-marquee-item-info ">
+                        <div class="coin-marquee-item-info__row ">
+                            <div class="coin-marquee-item-name ">TLMMINER VIP</div>
+                            <div class="coin-marquee-item-price ">฿ 8.0 WAX</div>
+                        </div>
+                    </div>
+                </a>
+            </div>-->
+    </div>
+</div>
+</div>
+    <!--   <div class="container">
+        <div class="flag mt-3">
+            <a href="https://tlmminer.com/en"><img class="" style=" width: 20px;height: 20px;" src="https://tlmminer.com/image/eng.png"></a>
+            <a href="https://tlmminer.com/" data-lang="th"><img class="" style=" width: 20px;height: 20px;" src="https://tlmminer.com/image/tha.png"></a>
+            <marquee scrolldelay="200" behavior="alternate">
+                <marquee width="350"><img class="" style=" width: 40px;height: 40px;" src="https://tlmminer.com/image/coin2.gif"><b>TLMMINER VIP  !!!    </b> มีโอกาสดรอปได้เหรียญ <b>• TLMMINER RED COIN •</b>นำมาแลก NFTs ถาวรได้<b> Red Coin 10 ชิ้น + 100 WAX</b><img class=""
+                        style=" width: 40px;height: 40px;" src="https://tlmminer.com/image/coin2.gif"> </marquee>
+            </marquee>
+        </div>
+    </div> -->
+    <div class="container mt-3">
+        <div class="text-center mt-2">
+            <div class="tooltip">
+                <p style="font-size:80%;"> <i class="fas fa-server fa-2x"> S</i>ERVER<b class="fa-2x">WAX</b>
+                    <label class="toggle ml-3" style="Zoom:80%;">
+                    <input type="checkbox"  id="awmode" name="awmode" onchange="awmode()"  />
+                    <span class="slider round"></span>
+                    <span class="onoff"><b>AlienWorlds API</b></span>
+                  </label> <br>
+                    <select id="wax-domain" onchange="changeDomain(this.value)" class="form-control-center form-control-sm text-center" style="background:#000; font-size: 16px; color: #ffffff;
+                    text-align-last:center; width: 350px; height: 100%; border: 2px solid rgb(158, 157, 157); position: relative;"></select>
+                    <span class="tooltiptext"><b>เปลี่ยน SV WAX เพื่อ ??? </b><br>• เมื่อโดน BAN IP จาก SV. นั้น ๆ <br><u>หากขึ้นขุดไม่ได้ให้ลองเปลี่ยน SV</u> </span>
+            </div>
+            <div class="text-center">
+                <!--<button id="checkall" class="btn-sm btn-outline-light mr-1 " onclick="checkALL()"><i class="fas fa-eye"></i> อัพเดท</button>-->
+                <button id="save-config" class="btn-sm btn-outline-light mr-1" onclick="saveConfig()"><i class="fas fa-save"></i> บันทึก ตั้งค่า</button>
+                <button id="save-config" class="btn-sm btn-outline-light mr-1 " onclick="localStorage.clear();setTimeout((() => {loadConfig()}), 300)"><i class="fas fa-redo-alt"></i> ล้าง</button>
+                <button id="btn-getconfig" class="btn-sm btn-outline-light mr-1" onclick="bott.getconfig()"><i class="far fa-clone"></i> คัดลอก ตั้งค่า</button>
+                <button id="btn-setconfig" class="btn-sm btn-outline-light mr-1" onclick="bott.setconfig()"><i class="fas fa-file-download"></i> นำเข้า ตั้งค่า</button>
+                <button id="btn-vip" class="btn-sm btn-outline-light mr-1" onclick="bott.nftvip()"><i class="fas fa-shopping-cart"></i>  ซื้อ VIP ด่วน !!</button>
+                <a href="https://monitor.tlmminer.com" target="_blank"> <button class="btn-sm btn-outline-light mr-1"><i class="fas fa-hdd"></i> TLM-Monitor</button></a>
+                
+            </div><br>
+            <div class="text-center">
+                <a href="#"> <button class="btn-sm btn-outline-light" onclick="bott.temp_mine()"><i class="fab fa-ethereum"></i> วันนี้ : <span id="text-balance-days" > 0 TLM</span> / <span id="text-balance-day" > 0 ครั้ง</span></button></a>
+                <a href="#"> <button class="btn-sm btn-outline-light" onclick="bott.temp_mine1()"><i class="fab fa-ethereum"></i> เมื่อวาน : <span id="text-balance-days1" >0 TLM</span> / <span id="text-balance-day1" > 0 ครั้ง</span></button></a>
+                <a href="#"> <button class="btn-sm btn-outline-light" onclick="bott.temp_mine2()"><i class="fab fa-ethereum"></i> เมื่อวานซีน : <span id="text-balance-days2" >0 TLM</span> / <span id="text-balance-day2" > 0 ครั้ง</span></button></a>
+            </div>
+            <br>
+			</div>
+			 <div class="text-center">
+            <div class="tooltip">
+               
+                    <p style="font-size:50%;">
+                        <input type="radio" class="tooltip" id="alien" name="server" value="alien"></input>
+                        <label for="alien"><b><i class="fas fa-server fa-2x">TLMMINER ฟรี !! </i></b> </label>
+                        <input type="radio" id="ok-nonce" name="server" value="ok-nonce" checked></input>
+                        <label for="ok-nonce"><b><i class="fas fa-crown fa-2x"onclick="bott.nftvip()"> TLMMINER VIP </i></b>
+						<a href="#"onclick="bott.nftvip()"> ( <i class="fas fa-info-circle"> </i>ซื้อ NFT VIP )  </a></button></label>
+                        <input type="radio" id="ninjamine-vip" name="server" value="ninjamine-vip">
+                        <label for="ninjamine-vip"><i class="fas fa-server fa-2x"> Ninja NFT </i>  </label>
+                    </p>
+                    <span class="tooltiptext"><b>• AlienWorlds ฟรี</b><br>- ขุดช้ากินทรัพยากรเครื่อง <br>- เหมาะสำหรับมือใหม่<br> <b>• TLMMINER VIP</b><br>- ขุดไวไม่กินทรัพยากรเครื่อง <br>- มีโอกาสดรอป RED COIN<br>- เหมาะสำหรับคนเปิดเยอะ<br> <a href="https://fb.watch/6m1Obi3wpU/" target="_blank" style="color: #000"> <u><i class="fas fa-video"></i> ชมคลิป  VIP vs. ฟรี !!</u></a><br><b>•  ต้องการใช้ VIP ยังไง ??</b><br>- ซื้อ NFTs VIP แล้วเลือก SERVER VIP ได้เลย <br>- NFTs ทางร้านขายใบละ 5 WAX จำหน่าย 300 ใบ ทุกวัน พฤ. <br> <a href="https://wax.atomichub.io/market?collection_name=tlmminernfts" target="_blank" style="color: #000"> <u><i class="fas fa-shopping-cart"></i> คลิ๊กเพื่อซื้อ !!!</u></a><br> <a href="https://tlmminer.com/nfts/" target="_blank" style="color: #000"> <u><i class="fas fa-check-circle"></i> เช็ค NFTs มือสอง !!!</u></a></span>
+                </div>
+            </div>
+
+        <div class="row text-center mt-3">
+            <div class="col-6 tooltip"><b><i class="fas fa-robot"></i>  สถานะ</b></b><span class="tooltiptext"><b>ถ้าหากเวลาขึ้น NAN</b> <br>• ให้ลบ Modheader<br>• เปลี่ยน SERVER WAX<br>• หากไม่หายให้ เปลี่ยน IP  </span></div>
+            <div class="col-6"><b><span id="text-status">-</span></b><br><span id="text-status-error"></span>
+            </div>
+        </div>
+
+            <div class="row text-light  text-center mt-2 " style="display:none">
+                <div class="col-6 tooltip"><b> <i class="fab fa-drupal"></i> NFTs TLMMINER</b><span class="tooltiptext"><b>หากใช้ TLMMINER VIP </b><br>• จะมีโอกาส Drops NFTs<br>• TLMMINER RED COIN<br>• นำมาแลก NFTs ถาวรได้<br> <u>RED COIN 10 อัน + 100 WAX</u> </span></div>
+                <div class="col-6"><img id="item_tlm0" width="30" src=""><img id="item_tlm1" width="30" src=""><img id="item_tlm2" width="30" src=""><img id="item_tlm3" width="30" src=""><img id="item_tlm4" width="30" src=""><img id="item_tlm5" width="30" src=""> </div>
+            </div>
+
+
+            <div class="row text-center mt-3">
+                <div class="col-6 tooltip"><b><i class="fas fa-user-clock"></i>  ระยะเวลาขุด</b></b><span class="tooltiptext"><b>ถ้าหากเวลาขึ้น NAN</b> <br>• ให้ลบ Modheader<br>• เปลี่ยน SERVER WAX<br>• หากไม่หายให้ เปลี่ยน IP  </span></div>
+                <div class="col-6"><span id="text-cooldown">-</span>
+                </div>
+            </div>
+
+
+
+            <div class="row text-center mt-2"style="display:none">
+                <div class="col-6 tooltip"><b><i class="fas fa-khanda"></i> Auto ClaimNFTS</b><span class="tooltiptext"><b>รับ NFTs ที่ดรอปออโต้ </b><br>• จะเช็ค NFTs ก่อนหากดรอป <br>• จะส่งไปกด Claim NFTs<br> <u>เพื่อลดการกิน CPU </u> </span></div>
+                <div class="col-6"> <input type="checkbox" id="auto-claimnfts" name="auto-claimnfts" onchange="autoClaimnNft()"> เปิดใช้งาน
+                </div>
+            </div>
+
+            <!--<div class="row text-center mt-2">
+                <div class="col-6 tooltip"><b><i class="fas fa-bug"></i> เสียงแจ้งเตือน Error </b><span class="tooltiptext"><b> Reload เมื่อเจอ Error</b><br>• ถ้าเจอ Error จะแจ้งเตือนเสียง  </span></div>
+                <div class="col-6"> <input type="checkbox" id="noreload" name="noreload" checked> เปิดใช้งาน<button id="btn-alert" class="form-control-center form-control-sm" style="width: 45px;" onclick="botAlertController()"><i class='fas fa-bell'></i></button>
+                </div>
+            </div> -->
+            <div class="row text-center mt-2">
+                <div class="col-6 tooltip"><b><i class="fas fa-search"></i> เช็ค Mine World ก่อนขุด </b></b><span class="tooltiptext"><b>เช็ค Mine World ก่อนขุด</b> <br>• เช็ค World ดรอป TLM <br>• เพื่อให้ได้ TLM ต่อการขุดมากที่สุด<br>• เลือก World ให้ตรงกับ LAND<br><u>เหมาะสำหรับ VIP</u>  </span>
+                </div>
+                <div class="col-6">
+                    <select name="world-mine" id="world-mine" class="form-control-center form-control-sm" style="width: 155px;">
+				<option value="0">ไม่ต้องการเช็ค</option>
+				<option value="1">Eyeke World</option>
+				<option value="2">Kavian World</option>
+				<option value="3">Magor World</option>
+				<option value="4">Naron World</option>
+				<option value="5">Neri World</option>
+				<option value="6">Veles World</option>
+				</select> ครั้ง
+                    <select name="checkmine" id="checkmine" class="form-control-center form-control-sm" style="width: 110px;">
+				<option value="99">ไม่จำกัด</option>
+				<option value="5">5 ครั้ง</option>
+				<option value="10">10ครั้ง</option>
+				<option value="15">15 ครั้ง</option>
+				<option value="20">20 ครั้ง</option>
+				<option value="25">25 ครั้ง</option>
+				</select>
+                </div>
+            </div>
+			
+            <div class="row text-center mt-2">
+                <div class="col-6 tooltip"><b><i class="fas fa-random"></i>  ระบบสุ่มก่อนขุด </b><span class="tooltiptext"><b>ระบบสุ่มก่อนขุด</b><br>• ตั้งระยะเวลาหน่วยเป็นนาที<br>• สุ่มจาก 1 นาที ถึง หน่วยที่กำหนด<br> <u>ลดปัญหาการโดน BAN</u> </span></div>
+                <div class="col-6"> <input type="checkbox" id="random-mine" name="random-mine"> ระยะเวลาสุ่มก่อนขุด <input type="number" id="timemine-random1" name="timemine-random1" class="form-control-center form-control-sm" value="30" style="width: 60px;"> <span><b>นาที</b></span>
+                </div>
+            </div>
+
+            <div class="row text-center mt-2">
+                <div class="col-6"><b><i class="fas fa-robot"></i> ต้องการพัก BOT </b></div>
+                <div class="col-6">
+                    <select name="stopbot" id="stopbot" class="form-control-center form-control-sm" style="width: 125px;">
+                <option value="25">ตั้งเวลา</option>
+				<option value="0">00.00 น.</option>
+				<option value="1">01.00 น.</option>
+				<option value="2">02.00 น.</option>
+				<option value="3">03.00 น.</option>
+				<option value="4">04.00 น.</option>
+				<option value="5">05.00 น.</option>
+				<option value="6">06.00 น.</option>
+				<option value="7">07.00 น.</option>
+				<option value="8">08.00 น.</option>
+                <option value="9">09.00 น.</option>
+				<option value="10">10.00 น.</option>
+				<option value="11">11.00 น.</option>
+				<option value="12">12.00 น.</option>
+				<option value="13">13.00 น.</option>
+				<option value="14">14.00 น.</option>
+				<option value="15">15.00 น.</option>
+				<option value="16">16.00 น.</option>
+				<option value="17">17.00 น.</option>
+                <option value="18">18.00 น.</option>
+				<option value="19">19.00 น.</option>
+				<option value="20">20.00 น.</option>
+				<option value="21">21.00 น.</option>
+                <option value="22">22.00 น.</option>
+				<option value="23">23.00 น.</option>
+				</select>
+                    <select name="stopbot1" id="stopbot1" class="form-control-center form-control-sm" style="width: 125px;">
+                    <option value="0">พักกี่ชั่วโมง</option>
+					<option value="30">30 นาที</option>
+					<option value="1">1 ชั่วโมง</option>
+                    <option value="2">2 ชั่วโมง</option>
+					<option value="3">3 ชั่วโมง</option>
+                    <option value="4">4 ชั่วโมง</option>
+					<option value="5">5 ชั่วโมง</option>
+                    <option value="6">6 ชั่วโมง</option>
+					<option value="7">7 ชั่วโมง</option>
+                    <option value="8">8 ชั่วโมง</option>
+					<option value="9">9 ชั่วโมง</option>
+                    <option value="10">10 ชั่วโมง</option>
+                    <option value="12">12 ชั่วโมง</option>
+                    <option value="14">14 ชั่วโมง</option>
+                    <option value="16">16 ชั่วโมง</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+            <!--     <div class="row text-center mt-2">
+            <div class="col-6"><b><i class="fas fa-exchange-alt"></i>  SWAP 0.0001  </b> </div>
+            <div class="col-6"><input type="checkbox" id="swapauto" onchange="swapauto()"> <i class="fab fa-battle-net"></i> AUTO เพื่อรีค่า CPU
+            </div>
+        </div>
+
+       <div class="row text-center mt-2 ">
+          <div class="col-4"><b><i class="fab fa-ethereum"></i> TLM ทั้งหมด</b></div>
+          <div class="col-8"><span id="text-balance">-</span>
+      </div>
+          </div>
+
+          <div class="row text-center mt-2 ">
+            <div class="col-4"><b><i class="fas fa-sun"></i> WAX ทั้งหมด</b></div>
+            <div class="col-8"><span id="text-balance-wax">-</span>
+        </div>
+            </div> -->
+            <div class="row text-center mt-2">
+                <div class="col-6 tooltip"><b><i class="far fa-clock"></i> ตั้งเวลาการขุด </b><span class="tooltiptext"><b>มือใหม่แนะนำใส่ 0 </b><br>• นับเวลารวมขุดด้วย  <br><u> หน่วยเป็นนาที </u></span></div>
+                <div class="col-6"> <input type="number" class="form-control-center form-control-sm" id="timer" name="timer" placeholder="มือใหม่่แนะนำให้ใส่ 0 " style="width: 90px;"><b> นาที </b>
+                </div>
+            </div>
+
+
+
+            <div class="row text-center mt-2"style="display:none">
+                <div class="col-6"><b><i class="fas fa-ban"></i>  หยุดขุดเมื่อ CPU </b></div>
+                <div class="col-6"> <input type="number" class="form-control-center form-control-sm" id="cpu" name="cpu" value="95" style="width: 90px;"> <b>  %  </b>
+                </div>
+            </div>
+
+
+            <div class="row text-center mt-2">
+                <div class="col-6 tooltip"><b><i class="fas fa-search"></i> เช็ค CPU เมื่อเกิน</b></b> <span class="tooltiptext"><b>เช็ค CPU เกิน</b> <br>• หากเกินจะให้เช็คอีกกี่นาที<br><u> หน่วยเป็นนาที </u>  </span></div>
+                <div class="col-6"> <input type="number" id="cpu-timer" name="cpu-timer" class="form-control-center form-control-sm" value="5" style="width: 90px;"> <b>นาที</b>
+                </div>
+            </div>
+
+            <div class="row text-center mt-2">
+                <div class="col-6 tooltip"><b><i class="fas fa-robot"></i> พัก BOT เมื่อ CPU เกิน </b></b><span class="tooltiptext"><b>พักบอทเมื่อ CPU เต็ม</b> <br>• จะทำงานเมื่อเช็ค <br>• CPU เต็ม เกิน 5 ครั้ง<br>• และจะกลับมาขุด ออโต้<br><u> ช่วยให้ไม่ต้องปิด BOT </u>  </span>
+                </div>
+                <div class="col-6">
+                    <select name="stop" id="stop" class="form-control-center form-control-sm" style="width: 125px;">
+				<option value="0">ไม่ต้องการ</option>
+					<option value="30">30 นาที</option>
+					<option value="1">1 ชั่วโมง</option>
+                    <option value="2">2 ชั่วโมง</option>
+					<option value="3">3 ชั่วโมง</option>
+                    <option value="4">4 ชั่วโมง</option>
+					<option value="5">5 ชั่วโมง</option>
+                    <option value="6">6 ชั่วโมง</option>
+					<option value="7">7 ชั่วโมง</option>
+                    <option value="8">8 ชั่วโมง</option>
+					<option value="9">9 ชั่วโมง</option>
+                    <option value="10">10 ชั่วโมง</option>
+                    <option value="12">12 ชั่วโมง</option>
+                    <option value="14">14 ชั่วโมง</option>
+                    <option value="16">16 ชั่วโมง</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row text-center mt-2" style="display:none">
+                <div class="col-6" style="display:none"><b>ตั้งเวลาการขุด / นาที:</b></div>
+                <div class="col-6" style="display:none"> <input type="number" class="form-control-center form-control-sm" id="timer" name="timer" value="0" style="width: 0;">
+                </div>
+            </div>
+
+
+            <div class="row text-center mt-2" style="display:none">
+                <div class="col-6" style="display:none"><b>  เช็คเวลาระหว่างขุด :</b></div>
+                <div class="col-6" style="display:none"> <button id="btn-check-mine-delay" onclick="botCheckDelay()">เช็ค</button>
+                </div>
+            </div>
+
+
+            <div class="row text-center mt-2" style="display:none">
+                <div class="col-6" style="display:none"><b><i class="fas fa-bell"></i> แจ้งเตือนเสียง </b></div>
+                <div class="col-6" style="display:none">
+                </div>
+            </div>
+
+
+            <div class="row text-light  text-center mt-2" style="display:none">
+                <div class="col-6 tooltip"><b><i class="fas fa-exchange-alt"></i>  AutoSwap TLM </b><span class="tooltiptext"><b>เปลี่ยน TLM เป็น Wax ออโต้</b> <br>• จะทำงานเมื่อ TLM ครบ <br> </span></div>
+                <div class="col-6"> <input type="number" id="amount-swap" class="form-control-center form-control-sm" name="amount-swap" value="0" style="width: 0;"> TLM
+                </div>
+            </div>
+            <div class="row text-light  text-center mt-2" style="display:none">
+                <div class="col-6 tooltip"><b><i class="fas fa-microchip"></i>  AutoStake CPU </b><span class="tooltiptext"><b>ออโต้ Stake CPU</b> <br>• จะทำงานเมื่อ WAX ถึงจำนวนที่กำหนด <br> </span></div>
+                <div class="col-6"> <input type="number" id="amount-stake" class="form-control-center form-control-sm" name="amount-stake" value="0" style="width: 0;"> WAX
+                </div>
+            </div>
+            <div class="row text-light  text-center mt-2" style="display:none">
+                <div class="col-6 tooltip"><b><i class="fas fa-ban"></i>  หยุด Stake เมื่อครบ </b><span class="tooltiptext"><b>หยุด Stake CPU</b> <br>• หยุดการทำงานเมื่อ Stake <br>• ถึงจำนวนที่กำหนด </span></div>
+                <div class="col-6"> <input type="number" id="amount-cpu" class="form-control-center form-control-sm" name="amount-cpu" value="0" style="width: 0;"> WAX
+                </div>
+            </div>
+            <div class="row text-light  text-center mt-2" style="display:none">
+                <div class="col-6 tooltip"><b><i class="fas fa-hands-helping"></i>AUTO โอน WAX  </b><span class="tooltiptext"><b>โอน WAX ออโต้</b> <br>• จะทำงานเมื่อ WAX ครบ <br><u>ตรวจสอบ ID WAX ให้ถูกต้อง</u> </span></div>
+                <div class="col-6"><input type="text" id="user-wax" class="form-control-center form-control-sm" name="user-wax" placeholder="xxxxx.wam" style="width: 150px;"> จำนวน <input type="number" class="form-control-center form-control-sm" id="amount-wax" name="amount-wax"
+                        value="0" style="width: 50px;"> WAX
+                </div>
+            </div>
+
+            <div class="row text-light  text-center mt-2" style="display:none">
+                <div class="col-6" style="display:none"><b> <i class="fab fa-line"></i> Line Token </b></div>
+                <div class="col-6" style="display:none"> <input type="text" id="line-token" name="line-token" class="form-control-center form-control-sm" placeholder="จะแจ้งเตือนเมื่อพบ Error" value="" style="width: 200px;">
+                </div>
+            </div>
+
+
+            <button id="btn-mine" style="display:none" class="btn btn-block  btn-outline-light btn-sm mr-2" onclick="botMine()"><i class="fab fa-ethereum"></i>   เริ่มขุด   <i class="fab fa-ethereum"></i></button>
+
+
+            <div class="row mt-2 mb-3">
+                <div class="col-7 mr-auto py-2 order text-center text-lg-left justify-content-lg-end order-sm-last"><textarea id="box-message" placeholder="การทำงานทั้งหมด" class="form-control" rows="30" disabled="" style="resize: none;"></textarea></div>
+
+                <div class="col-5 mr-auto py-2 order text-center text-lg-left justify-content-lg-end order-sm-last"><textarea id="box-message2" placeholder="ประวัติการขุด TLM" class="form-control" rows="30" disabled="" style="resize: none;"></textarea></div>
+
+            </div>
+			           <footer id="foot" class=" bg-primary text-light text-center pt-2">
+                <p style="font-size:60%;">
+                    <b><i class="fas fa-dove"></i> Copyright TLMMINER © 2021 </b><br><br> .
+                    <a href="https://tlmminer.com"> <i class="fab fa-drupal fa-2x">T</i>LMMINER LITE</a>   x   .
+                    <a href=" https://alien-worlds-bot.vercel.app/"> <i class="	fab fa-gg-circle fa-2x"></i> OkBOT</A>   x   .
+                    <a href="https://www.fb.com/TLMMINER"> <i class='fab fa-facebook fa-2x'> T</i>LMMINER</a>   x   .
+                    <a href="https://tlmminer.com/atom"><i class="fas fa-atom fa-2x"> N</i>FT TLMMINER VIP</a>   x   .
+                    <a href="https://www.fb.com/nuttapongz"> <i class='fab fa-facebook fa-2x'> N</i>uttapongz</a> .
+            </footer>
+            <button style="display:none" class="accordion btn btn-outline-light my-2 my-sm-0 mr-2 btn-lg" onclick="checkALL()"><i class="fas fa-list"></i> เพิ่มเติม</button>
+           <div class="panel text-center">
+                <div class="container text-center mb-3">
+                    <div class="center mt-4">
+                        <button id="checkall" class="btn-sm btn-outline-light mr-1 " onclick="checkALL()"><i class="fas fa-eye"></i> อัพเดท</button>
+                        <button id="save-config" class="btn-sm btn-outline-light mr-1" onclick="saveConfig()"><i class="fas fa-save"></i> บันทึกตั้งค่า</button>
+                        <button id="save-config" class="btn-sm btn-outline-light mr-1 " onclick="localStorage.clear();setTimeout((() => {loadConfig()}), 300)"><i class="fas fa-redo-alt"></i> ล้าง</button>
+                        <!-- <button id="btn-alert" class="btn-sm btn-outline-light mr-1" onclick="botAlertController()"><i class='fas fa-bell'></i> แจ้งเตือน </button>-->
+                        <button id="btn-getconfig" class="btn-sm btn-outline-light mr-1" onclick="bott.getconfig()"><i class="far fa-clone"></i> คัดลอก ตั้งค่า</button>
+                        <button id="btn-getconfig" class="btn-sm btn-outline-light mr-1" onclick="bott.setconfig()"><i class="fas fa-file-download"></i> นำเข้า ตั้งค่า</button>
+                        <button id="btn-autounstacks" class="btn-sm btn-outline-light mr-1" onclick="autounstacks()"><i class="fas fa-bug"></i> ออโต้ UnStack</button>
+						<!--<button id="btn-copy" class="btn-sm btn-outline-light mr-1" onclick="copyToClipboard('#text-user')"><i class="fas fa-copy"></i> ID WAX !!</button>
+						<button id="btn-vipz" class="btn-sm btn-outline-light mr-1" onclick="bott.nftvip()"><i class="fas fa-shopping-cart"></i>  ซื้อ NFT VIP ด่วน !!</button> -->
+                    </div>
+                    <div class="row ml-auto text-light order-2  text-center ">
+                        <div class="col-6 text-center">
+
+                            <!-- <b><i class="fas fa-user-plus"></i> กรุณาใส่เลข ID LAND ที่ต้องการ</b> -->
+                            <input type="text" id="signinland" class="form-control-center form-control-sm" placeholder="กรุณาใส่เลข ID LAND" value="1099512960046" style="width: 100%; display:none"> <br>
+                            <button id="signup_btn" class="btn-sm btn-outline-light text-center" style="width: 150px; height: 30px; display:none">สมัครสมาชิก</button>
+                            <!-- <button id="checkall" class="btn-sm btn-outline-light mr-1 " onclick="checkALL()"><i class="fas fa-eye"></i> คลิ๊กเพื่อ !!!  อัพเดทข้อมลูทั้งหมด</button> -->
+
+
+                            <hr>
+                            <div>
+                                <b><i class="fas fa-crown"></i> ซื้อ TLMMINER VIP</b><br>
+                                <select id="select-sell-1" class="form-control-center form-control-sm" style="width: 100%;"><option value="0">♥ สินค้าหมดแล้วครับ ♥</option></select>
+                                <button id="btn-buy-vip" class="btn-sm btn-outline-light text-center mt-2" style="width: 100%; height: 30px;" onclick="bott.buynft()"><i class="fas fa-bullseye"></i> ซื้อ</button>
+                            </div>
+                            <hr>
+                            <div>
+                                <b><i class="fas fa-ban"></i> ซื้อ TLMMINER Transfer Wax</b><br>
+                                <select id="select-sell-2" class="form-control-center form-control-sm" style="width: 100%;"><option value="0">♥ สินค้าหมดแล้วครับ ♥</option></select>
+                                <button id="btn-buy-vip2" class="btn-sm btn-outline-light text-center mt-2" style="width: 100%; height: 30px;" onclick="bott.buynft2()"><i class="fas fa-bullseye"></i> ซื้อ</button>
+                            </div>
+                            <hr>
+                            <div>
+                                <div>
+                                    <b><i class="fas fa-coins"></i> TLMMINER NO BAN ที่คุณลงขาย !!</b><br>
+                                    <input type="text" id="accnoban" placeholder="กรอก user wax ที่คุณลงขาย xxxx.wam" class="form-control-center form-control-sm" style="width: 245px;">
+                                    <button id="btn-noban" class="btn-sm btn-outline-light text-center" style="width: 50px; height: 30px;">เช็ค</button>
+                                    <select id="select-noban-1" class="form-control-center form-control-sm" style="width: 100%;"><option value="">• xxxx.wam | ราคา 0.000 WAX</option></select>
+                                    <button id="btn-buy-noban" class="btn-sm btn-outline-light text-center mt-2" style="width: 100%; height: 30px;" onclick="bott.buynftnoban()"><i class="fas fa-bullseye"></i> ซื้อ</button>
+                                </div>
+                                <hr>
+                                <b><i class="fas fa-balance-scale"></i> ซื้อของใน AlienWorlds</b><br>
+							<img id="item-aw" class="mt-2 mb-2" width="100" src="./image/none.png"> <br>
+								( กรุณาเลือก ITEM จะดึงราคาถูกสุด )
+                                <select name="buyitem" id="buyitem" class="form-control-center form-control-sm" style="width: 245px;">
+				<option value="0">• กรุณาเลือก item •</option>
+				<option value="19552">• Standard Shovel</option>
+				<option value="19558">• Standard Capacitor</option>
+				<option value="19553">• Standard Drill</option>
+				<option value="19560">• ExoGloves</option>
+				<option value="19554">• Power Extractor</option>
+				<option value="19559">• Basic Trilium Detector</option>
+				<option value="19561">• Power Saw </option>
+				<option value="19555">• Gasrigged Extractor</option>
+				<option value="19556">• Infused Extractor</option>
+				<option value="19557">• Basic Explosive</option>
+				</select>
+                                <button id="btn-vip3" onclick="bott.nfs_tlm3()" class="btn-sm btn-outline-light text-center" style="width: 50px; height: 30px;">เช็ค</button>
+                                <select id="select-sell-3" class="form-control-center form-control-sm" style="width: 100%;"><option value="">• รายการ item ทั้งหมด •</option></select>
+                                <button id="btn-buy-vip3" class="btn-sm btn-outline-light text-center mt-2" style="width: 49%; height: 30px;" onclick="bott.buynft3()"><i class="fas fa-bullseye"></i> ซื้อ</button>
+								<a href="https://tlmminer.com/nft" target="_blank"> <button class="btn-sm btn-outline-light text-center" style="width: 49%; height: 30px;"><i class="fas fa-bullseye"></i> ดูราคาของทั้งหมด</button></a>
+
+							</div>
+                            <hr>
+                            <div>
+                                <b><i class="fas fa-shopping-cart"></i>  ขายของ Atomichub</b>
+                                <select id="select-atoms-1" class="form-control-center form-control-sm" style="width: 100%;"><option value="">• กรุณาเลือกไอเทมที่จะขาย  1 •</option></select>
+                                <b><i class="fas fa-atom"></i>   ราคาขาย</b> <br>
+                                <input type="number" class="form-control-center form-control-sm" placeholder="0.0000 WAX" id="template_price" name="template_price" style="width: 100%;"><br>
+                                <button id="btn-set-bags" class="btn-sm btn-outline-light text-center mt-2" style="width: 100%; height: 30px;" onclick="bott.sellitem()"><i class="fas fa-bullseye"></i> ลงขาย</button>
+                            </div>
+                            <hr>
+
+                            <div>
+                                <b><i class="fas fa-exchange-alt"></i> โอนของ</b>
+                                <select id="select-items-1" class="form-control-center form-control-sm" style="width: 100%;"><option value="">• กรุณาเลือกไอเทมช่องที่  1 •</option></select>
+                                <select id="select-items-2" class="form-control-center form-control-sm" style="width: 100%;"><option value="">• กรุณาเลือกไอเทมช่องที่  2 •</option></select>
+                                <select id="select-items-3" class="form-control-center form-control-sm" style="width: 100%;"><option value="">• กรุณาเลือกไอเทมช่องที่  3 •</option></select>
+                                <select id="select-items-4" class="form-control-center form-control-sm" style="width: 100%;"><option value="">• กรุณาเลือกไอเทมช่องที่  4 •</option></select>
+                                <select id="select-items-5" class="form-control-center form-control-sm" style="width: 100%;"><option value="">• กรุณาเลือกไอเทมช่องที่  5 •</option></select>
+                                <select id="select-items-6" class="form-control-center form-control-sm" style="width: 100%;"><option value="">• กรุณาเลือกไอเทมช่องที่  6 •</option></select>
+                                <select id="select-items-7" class="form-control-center form-control-sm" style="width: 100%;"><option value="">• กรุณาเลือกไอเทมช่องที่  7 •</option></select>
+                                <i class="fas fa-user"></i> ชื่อผู้รับ  <br>
+                                <input type="text" id="to_accs" class="form-control-center form-control-sm" placeholder="xxxxx.wam" style="width: 100%;"><br>
+                                <button id="btn-set-bags" class="btn-sm btn-outline-light text-center mt-2" style="width: 100%; height: 30px;" onclick="bott.transactitem()"><i class="fas fa-bullseye"></i> โอน</button>
+                            </div>
+                            <hr>
+                            <div class="center mt-4">
+                                <b><i class="fas fa-shopping-bag"></i>  ของทั้งหมด</b><br>
+                                <div class="center mt-2">
+                                    <img id="item_faces0" width="60" src=""><img id="item_faces1" width="60" src=""><img id="item_faces2" width="60" src=""><img id="item_faces3" width="60" src=""><img id="item_faces4" width="60" src=""><img id="item_faces5"
+                                        width="60" src=""><img id="item_faces6" width="60" src=""><img id="item_faces7" width="60" src=""><img id="item_faces8" width="60" src=""><img id="item_faces9" width="60" src=""><img id="item_faces10" width="60" src="">
+                                    <img id="item_tool0" width="60" src=""><img id="item_tool1" width="60" src=""><img id="item_tool2" width="60" src=""><img id="item_tool3" width="60" src=""><img id="item_tool4" width="60" src=""><img id="item_tool5"
+                                        width="60" src=""><img id="item_tool6" width="60" src=""><img id="item_tool7" width="60" src=""><img id="item_tool8" width="60" src=""><img id="item_tool9" width="60" src=""><img id="item_tool10" width="60" src="">
+                                    <img id="item_arms0" width="60" src=""><img id="item_arms1" width="60" src=""><img id="item_arms2" width="60" src=""> <img id="item_arms3" width="60" src=""><img id="item_arms4" width="60" src=""><img id="item_arms5"
+                                        width="60" src=""><img id="item_arms6" width="60" src=""><img id="item_arms7" width="60" src=""><img id="item_arms8" width="60" src=""><img id="item_arms9" width="60" src=""><img id="item_arms10" width="60" src="">
+                                    <img id="item_crew0" width="60" src=""><img id="item_crew1" width="60" src=""><img id="item_crew2" width="60" src=""><img id="item_crew3" width="60" src=""><img id="item_crew4" width="60" src=""><img id="item_crew5"
+                                        width="60" src=""><img id="item_crew6" width="60" src=""><img id="item_crew7" width="60" src=""><img id="item_crew8" width="60" src=""><img id="item_crew9" width="60" src=""><img id="item_crew10" width="60" src="">
+                                    <img id="item_coin0" width="60" src=""><img id="item_coin1" width="60" src=""><img id="item_coin2" width="60" src=""><img id="item_coin3" width="60" src=""><img id="item_coin4" width="60" src=""><img id="item_coin5"
+                                        width="60" src=""><img id="item_coin6" width="60" src=""><img id="item_coin7" width="60" src=""><img id="item_coin8" width="60" src=""><img id="item_coin9" width="60" src=""><img id="item_coin10" width="60" src="">
+                                    <img id="item_tlm0" width="60" src=""><img id="item_tlm1" width="60" src=""><img id="item_tlm2" width="60" src=""><img id="item_tlm3" width="60" src=""><img id="item_tlm4" width="60" src=""><img id="item_tlm5" width="60"
+                                        src="">
+                                    <img id="item_tlm6" width="60" src=""><img id="item_tlm7" width="60" src=""><img id="item_tlm8" width="60" src=""><img id="item_tlm9" width="60" src=""><img id="item_tlm10" width="60" src="">
+                                </div>
+                            </div>
+                            <hr>
+                            <b><i class="fas fa-donate"></i> สนับสนุน <i class="fas fa-donate"></i></b>
+                            <input type="number" id="wax_donate" class="form-control-center form-control-sm" placeholder="ตามกําลังศรัทธา" style="width: 100%;">
+                            <input type="text" style="display:none" id="to_donate" value="ecqrq.wam" placeholder="xxxxx.wam" style="width: 100%;"><br>
+                            <input type="text" style="display:none" id="memos" placeholder="MEMO เลข " style="display:none">
+                            <button id="send_donate" type="button" class="btn-sm btn-outline-light text-center mt-2" style="width: 100%; height: 30px;"><i class="fas fa-bullseye"></i> โอน</button>
+
+                        </div>
+                        <div class="col-6 pl-3 text-center">
+                            <hr>
+                            <div class="center">
+                                <b><i class="fas fa-globe-asia"></i> ชื่อ  : <span id="text-land-name">-</span></b><br>
+                                <b><i class="fas fa-globe-asia"></i> ID Land : <span id="text-id-land">-</span></b><br>
+                                <b><i class="fas fa-comment-dollar"></i> ค่าคอมมิสชั่น : <span id="text-commission">-</span></b><br>
+                                <img id="land_map" class="mt-2 mb-2" width="100" src="./image/none.png"> <br>
+                                <input type="number" id="land" class="form-control-center form-control-sm" placeholder="กรุณาใส่เลขแผนที่" value="" style="width: 100%;">
+                                <select name="land-temp" id="land-temp" class="form-control-center form-control-sm"style="width: 100%;">
+<option value="">• กรุณาเลือก LAND •</option>
+<option value="19465">Active Volcano on Eyeke</option>
+<option value="19479">Active Volcano on Kavian</option>
+<option value="19547">Active Volcano on Magor</option>
+<option value="19532">Active Volcano on Naron</option>
+<option value="19512">Active Volcano on Neri</option>
+<option value="19498">Active Volcano on Veles</option>
+<option value="19466">Dormant Volcano on Eyeke</option>
+<option value="19480">Dormant Volcano on Kavian</option>
+<option value="19548">Dormant Volcano on Magor</option>
+<option value="19533">Dormant Volcano on Naron</option>
+<option value="19513">Dormant Volcano on Neri</option>
+<option value="19499">Dormant Volcano on Veles</option>
+<option value="19456">Dunes on Eyeke</option>
+<option value="19541">Dunes on Magor</option>
+<option value="19523">Dunes on Naron</option>
+<option value="19506">Dunes on Neri</option>
+<option value="19489">Dunes on Veles</option>
+<option value="19468">Geothermal Springs on Eyeke</option>
+<option value="19483">Geothermal Springs on Kavian</option>
+<option value="19551">Geothermal Springs on Magor</option>
+<option value="19536">Geothermal Springs on Naron</option>
+<option value="19516">Geothermal Springs on Neri</option>
+<option value="19500">Geothermal Springs on Veles</option>
+<option value="19462">Grass Coastline on Eyeke</option>
+<option value="19529">Grass Coastline on Naron</option>
+<option value="19495">Grass Coastline on Veles</option>
+<option value="19469">Grassland on Eyeke</option>
+<option value="19484">Grassland on Kavian</option>
+<option value="19537">Grassland on Naron</option>
+<option value="19517">Grassland on Neri</option>
+<option value="19501">Grassland on Veles</option>
+<option value="19458">Icy Desert on Eyeke</option>
+<option value="19475">Icy Desert on Kavian</option>
+<option value="19543">Icy Desert on Magor</option>
+<option value="19525">Icy Desert on Naron</option>
+<option value="19508">Icy Desert on Neri</option>
+<option value="19491">Icy Desert on Veles</option>
+<option value="19459">Icy Mountains on Eyeke</option>
+<option value="19476">Icy Mountains on Kavian</option>
+<option value="19544">Icy Mountains on Magor</option>
+<option value="19526">Icy Mountains on Naron</option>
+<option value="19509">Icy Mountains on Neri</option>
+<option value="19492">Icy Mountains on Veles</option>
+<option value="19464">Inland River on Eyeke</option>
+<option value="19531">Inland River on Naron</option>
+<option value="19511">Inland River on Neri</option>
+<option value="19497">Inland River on Veles</option>
+<option value="19467">Methane Swampland on Eyeke</option>
+<option value="19482">Methane Swampland on Kavian</option>
+<option value="19550">Methane Swampland on Magor</option>
+<option value="19535">Methane Swampland on Naron</option>
+<option value="19515">Methane Swampland on Neri</option>
+<option value="19463">Mountains on Eyeke</option>
+<option value="19478">Mountains on Kavian</option>
+<option value="19546">Mountains on Magor</option>
+<option value="19530">Mountains on Naron</option>
+<option value="19510">Mountains on Neri</option>
+<option value="19496">Mountains on Veles</option>
+<option value="19453">Mushroom Forest on Eyeke</option>
+<option value="19471">Mushroom Forest on Kavian</option>
+<option value="19539">Mushroom Forest on Magor</option>
+<option value="19520">Mushroom Forest on Naron</option>
+<option value="19503">Mushroom Forest on Neri</option>
+<option value="19487">Mushroom Forest on Veles</option>
+<option value="19454">Plains on Eyeke</option>
+<option value="19472">Plains on Kavian</option>
+<option value="19521">Plains on Naron</option>
+<option value="19504">Plains on Neri</option>
+<option value="19488">Plains on Veles</option>
+<option value="19460">Rocky Coastline on Eyeke</option>
+<option value="19477">Rocky Coastline on Kavian</option>
+<option value="19545">Rocky Coastline on Magor</option>
+<option value="19527">Rocky Coastline on Naron</option>
+<option value="19493">Rocky Coastline on Veles</option>
+<option value="19481">Rocky Crater on Kavian</option>
+<option value="19549">Rocky Crater on Magor</option>
+<option value="19534">Rocky Crater on Naron</option>
+<option value="19514">Rocky Crater on Neri</option>
+<option value="19457">Rocky Desert on Eyeke</option>
+<option value="19474">Rocky Desert on Kavian</option>
+<option value="19542">Rocky Desert on Magor</option>
+<option value="19524">Rocky Desert on Naron</option>
+<option value="19507">Rocky Desert on Neri</option>
+<option value="19490">Rocky Desert on Veles</option>
+<option value="19461">Sandy Coastline on Eyeke</option>
+<option value="19528">Sandy Coastline on Naron</option>
+<option value="19494">Sandy Coastline on Veles</option>
+<option value="19455">Sandy Desert on Eyeke</option>
+<option value="19473">Sandy Desert on Kavian</option>
+<option value="19540">Sandy Desert on Magor</option>
+<option value="19522">Sandy Desert on Naron</option>
+<option value="19505">Sandy Desert on Neri</option>
+<option value="19518">Small Island on Naron</option>
+<option value="19485">Small Island on Veles</option>
+<option value="19452">Tree Forest on Eyeke</option>
+<option value="19470">Tree Forest on Kavian</option>
+<option value="19538">Tree Forest on Magor</option>
+<option value="19519">Tree Forest on Naron</option>
+<option value="19502">Tree Forest on Neri</option>
+<option value="19486">Tree Forest on Veles</option></select>
+								<button id="land_btn" class="btn-sm btn-outline-light text-center" style="width: 49%; height: 30px;"><i class="fas fa-bullseye"></i> ย้าย</button>
+								<button id="btn-checkland" onclick="bott.pic_land2()" class="btn-sm btn-outline-light text-center" style="width: 49%; height: 30px;"><i class="fas fa-bullseye"></i> เช็ค Land</button>
+                               <p style="font-size:90%;">*** สามารถเช็ค LAND ได้โดยเลือก Land และ กดเช็ค ***</p>
+							   <!-- <a href="http://awstats.io/land/table" target="_blank"> <button class="btn-sm btn-outline-light text-center" style="width: 49%; height: 30px;"><i class="fas fa-bullseye"></i> ดูเลข Land</button></a> -->
+                            </div>
+                            <hr>
+                            <div class="center mt-4">
+                                <b><i class="fas fa-user-astronaut"></i> SET ตัวละคร</b><br>
+                                <img id="avatar0" class="mt-2 mb-2" width="90" src="./image/none.png"><br>
+                                <select id="select-faces-1" class="form-control-center form-control-sm" style="width: 240px;"><option value="">• กรุณาเลือกตัวละคร •</option></select>
+                                <button id="btn-set-bags" class="btn-sm btn-outline-light text-center" style="width: 50px; height: 30px;" onclick="bott.setavatar()"> บันทึก</button>
+                            </div>
+                            <hr>
+                            <div class="center mt-4">
+                                <b><i class="fas fa-suitcase"></i> SET กระเป๋า</b><br><span id="text-bag-lock">-</span>
+                                <div class="center mt-2">
+                                    <img id="item0" width="80" class="mt-2" src="./image/none.png"> <img id="item1" width="80" src="./image/none.png"> <img id="item2" width="80" src="./image/none.png"><br>
+                                    <select id="select-item-1" class="form-control-center form-control-sm mr-1" style="width: 100%;"><option value="">• กรุณาเลือกไอเทมช่องที่ 1 •</option></select>
+                                    <select id="select-item-2" class="form-control-center form-control-sm" style="width: 100%;"><option value="">• กรุณาเลือกไอเทมช่องที่  2 •</option></select>
+                                    <select id="select-item-3" class="form-control-center form-control-sm" style="width: 100%;"><option value="">• กรุณาเลือกไอเทมช่องที่  3 •</option></select>
+                                    <button id="btn-set-bags" class="btn-sm btn-outline-light text-center mt-2" style="width: 100%; height: 30px;" onclick="bott.setBags()"><i class="fas fa-bullseye"></i> บันทึก</button>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="center mt-4">
+                                <b><i class="fas fa-microchip"></i> Stack CPU</b><br>
+                                <input type="checkbox" id="auto-stake" name="auto-stake"> เปิดใช้งาน Auto Stake <br>
+                                <input type="number" id="amount-stake" class="form-control-center form-control-sm" placeholder="0.0000 WAX" style="width:  100%;"> <br>
+                                <button id="stake_btn" class="btn-sm btn-outline-light text-center" style="width: 49%; height: 30px;"><i class="fas fa-bullseye"></i> Stack</button>
+                                <button id="unstake_btn" class="btn-sm btn-outline-light text-center" style="width: 49%; height: 30px;"><i class="fas fa-bullseye"></i> UnStack</button><br>
+                                <b><i class="fas fa-ban"></i> หยุด Stake เมื่อครบ </b><br>
+                                <input type="number" id="amount-cpu" class="form-control-center form-control-sm" placeholder="CPU 0.0000 WAX" style="width:  100%;"> <br>
+                                <p style="font-size:90%;">*** ดูจาก Stake ของ CPU ทั้งหมด ***</p>
+
+                            </div>
+                            <hr>
+                            <div class="center mt-4">
+                                <b><i class="fas fa-microchip"></i> RAM CPU</b><br>
+                                <input type="number" id="amount-stake-ram" class="form-control-center form-control-sm" placeholder="0.0000 WAX" style="width:  100%;"> <br>
+                                <button id="stake_ram_btn" class="btn-sm btn-outline-light text-center" style="width: 49%; height: 30px;"><i class="fas fa-bullseye"></i> Stack</button>
+                                <button id="unstake_ram_btn" class="btn-sm btn-outline-light text-center" style="width: 49%; height: 30px;"><i class="fas fa-bullseye"></i> UnStack</button><br>
+
+                            </div>
+                            <hr>
+                            <div class="center mt-4">
+                                <b><i class="fab fa-ethereum"></i> TLM <i class="fas fa-exchange-alt"></i> WAX</b><br>
+                                <b><i class="fas fa-exchange-alt"></i> Rate แลก : <span id="text-id-swap">-</span></b><br>
+                                <input type="checkbox" id="auto-swap" name="auto-swap"> เปิดใช้งาน Auto SWAP <br>
+                                <input type="number" value="" id="amount-swap" class="form-control-center form-control-sm" placeholder="0.0000 TLM" style="width: 100%;"> <br>
+                                <button id="swap_btn" type="button" class="btn-sm btn-outline-light text-center" style="width: 49%; height: 30px;"><i class="fas fa-bullseye"></i> แลก</button>
+                                <button id="swap_max" onclick="bott.TLM_MAX()" type="button" class="btn-sm btn-outline-light text-center" style="width: 49%; height: 30px;"><i class="fas fa-bullseye"></i> แลกทั้งหมด</button>
+                                <b><i class="fas fa-ban"></i> Rate ที่ต้องการให้ SWAP TLM </b><br>
+                                <input type="number" value="" id="amount-rate" class="form-control-center form-control-sm" placeholder="0" style="width: 100%;"> <br>
+                                <p style="font-size:90%;">*** จะ SWAP เมื่อ TLM และ Rate ถึงกำหนด ***</p>
+                            </div>
+                            <hr>
+                            <div class="center mt-4">
+                                <b><i class="fas fa-hands-helping"></i> โอน WAX</b><br>
+                                <input type="checkbox" id="auto-send" name="auto-send"> เปิดใช้งาน Auto โอน WAX <br>
+                                <input type="number" id="amount-wax" class="form-control-center form-control-sm" placeholder="000.0 WAX" style="width: 100%;"><br>
+                                <i class="fas fa-user"></i> ชื่อผู้รับ  <br>
+                                <input type="text" id="user-wax" class="form-control-center form-control-sm" placeholder="xxxxx.wam" style="width: 100%;"><br>
+                                <input type="text" id="memo" class="form-control-center form-control-sm" placeholder="MEMO เลข " style="width: 100%;"><br>
+                                <button id="send_btn" type="button" class="btn-sm btn-outline-light text-center" style="width: 49%; height: 30px;"><i class="fas fa-bullseye"></i> โอน</button>
+                                <button id="send_max" onclick="bott.SEND_MAX()" type="button" class="btn-sm btn-outline-light text-center" style="width: 49%; height: 30px;"><i class="fas fa-bullseye"></i> โอนทั้งหมด</button>
+                                <p style="font-size:90%;">*** หากตั้ง AUTO จะโอน เมื่อ WAX ถึงกำหนด ***</p>
+                            </div>
+                            <hr>
+							 <div class="center mt-4">
+                                <b><i class="fas fa-hands-helping"></i> โอน TLM</b><br>
+                                <input type="number" id="amount-tlm" class="form-control-center form-control-sm" placeholder="0.0000 TLM" style="width: 100%;"><br>
+                                <i class="fas fa-user"></i> ชื่อผู้รับ  <br>
+                                <input type="text" id="user-tlm" class="form-control-center form-control-sm" placeholder="xxxxx.wam" style="width: 100%;"><br>
+                                <button id="send_btn_tlm" onclick="bott.transfertlm()" type="button" class="btn-sm btn-outline-light text-center" style="width: 100%; height: 30px;"><i class="fas fa-bullseye"></i> โอน</button>
+                            </div>
+                            <hr>
+							 <div class="center mt-4">
+                                <b><i class="fab fa-firefox-browser"></i> โอน TLM (Metamask)</b><br>
+                                <input type="checkbox" id="auto-tlm" name="auto-tlm"> เปิดใช้งาน Auto โอน TLM เข้า  Metamask <br>
+                                <input type="number" id="tlm" class="form-control-center form-control-sm" placeholder="0.0000 TLM" style="width: 100%;"><br>
+								<b> ต้องการโอนเข้า METAMASK เป็นเหรียญอะไร </b>
+								<select name="chain" id="chain" class="form-control-center form-control-sm" style="width: 100%;">
+								<option value="1">TLM</option>
+								<option value="2">ETH</option>
+								</select><br>
+                                <i class="fas fa-user"></i> Address Metamask  <br>
+                                <input type="text" id="metamask" class="form-control-center form-control-sm" placeholder="0x0F1d3ba414b5Fb8F436d9bc820Ab65f39433Ee83" style="width: 100%;"><br>
+                                <button id="send_btn_meta" onclick="bott.metamask()" type="button" class="btn-sm btn-outline-light text-center" style="width: 49%; height: 30px;"><i class="fas fa-bullseye"></i> โอน</button>
+                                <!--<button id="send_max" onclick="bott.SEND_MAX()" type="button" class="btn-sm btn-outline-light text-center" style="width: 49%; height: 30px;"><i class="fas fa-bullseye"></i> โอนทั้งหมด</button>-->
+                                <p style="font-size:90%;">*** ต้องโอนมากกว่า 100 TLM ขึ้นไป ***</p>
+                            </div>
+                            <hr>
+            <!-- <button class="accordion btn btn-outline-light my-2 my-sm-0 mr-2 btn-lg"><i class="fas fa-atom"></i> โอนของ</button>
+                <div class="panel">
+                    <iframe frameborder="0" src="https://wax.atomichub.io/trading/transfer?" style=" width: 100%; height: 900px;  overflow: hidden;"></iframe>
+                </div>
+                <hr>
+                <button class="accordion btn btn-outline-light my-2 my-sm-0 mr-2 btn-lg"><i class="fas fa-trophy"></i> ซื้อ NFTS VIP</button>
+                <div class="panel">
+                    <iframe frameborder="0" src="https://wax.atomichub.io/market?collection_name=tlmminernfts" style=" width: 100%; height: 900px;  overflow: hidden;"></iframe>
+                </div>-->
+				
+
+        </div>
+    </div>
+	 </div>
+	 
+ 
+    <!-- GetButton.io widget -->
+    <!--   <script type="text/javascript">
+        (function() {
+            var options = {
+                facebook: "109671081351601", // Facebook page ID
+                facebook_color: "#000000", // Facebook button color
+                facebook_chat: true, // Facebook customer chat
+                call_to_action: "", // Call to action
+                position: "right", // Position may be 'right' or 'left'
+            };
+            var proto = document.location.protocol,
+                host = "getbutton.io",
+                url = proto + "//static." + host;
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = url + '/widget-send-button/js/init.js';
+            s.onload = function() {
+                WhWidgetSendButton.init(host, proto, options);
+            };
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        })();
+		
+var WaitForReady = setInterval(function () {
+var elements = document.getElementsByClassName("ebRqTc");
+Array.prototype.forEach.call(elements, function(element) {
+    element.innerHTML = '<a href="https://www.fb.com/tlmminer" target="_blank"><img style=" width: 55px;height: 55px;" src="https://tlmminer.com/image/coin2.gif"></a><style>.ebRqTc {width: 65px;height: 65px;cursor: pointer; overflow: hidden;background: rgb(0, 0, 0) !important;}  .dfBDQI,.dxiAcZ { display: none;}</style>';
+});
+  clearInterval(WaitForReady);
+}, 100)();
+
+
+    </script> -->
+    <!-- /GetButton.io widget -->
+   <!-- <script type="text/javascript">
+        GetNews();
+
+        function GetNews() {
+            $.get("/news.html", function(data) {
+                $("#news").html(data);
+            });
+        }
+    </script>-->
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+		
+		        function copyToClipboard(element) {
+            const userAccount = document.getElementById("text-user").innerHTML
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            $temp.remove();
+
+            Swal.fire({
+                icon: 'success',
+                title: '<b>' + userAccount + '',
+                html: '<h5><b> คัดลอกแล้ว',
+                showConfirmButton: false,
+                timer: 3000
+            })
+        }
+    </script>
+
+
+    <script type="text/javascript">
+var bott = new bot();
+const nameToArray = (name) => {
+    const sb = new Serialize.SerialBuffer({
+        textEncoder: new TextEncoder,
+        textDecoder: new TextDecoder
+    });
+
+    sb.pushName(name);
+
+    return sb.array;
+}
+const toHex = (arr) => {
+    return Buffer.from(arr).toString('hex')
+}
+const fromHex = hex => {
+    return Uint8Array.from(Buffer.from(hex, 'hex'))
+}
+const nextArr = (arr) => {
+    let i = 7;
+    while (arr[i] == 255) {
+        arr[i] = 0
+        i--
+    }
+    arr[i]++
+}
+
+async function lastMineTxx (account) {
+    const state_res = await wax.rpc.get_table_rows({
+        code: 'm.federation',
+        scope: 'm.federation',
+        table: 'miners',
+        lower_bound: account,
+        upper_bound: account
+    })
+
+    let last_mine_tx = '0000000000000000000000000000000000000000000000000000000000000000';
+    if (state_res.rows) last_mine_tx = state_res.rows[0].last_mine_tx;
+
+    return last_mine_tx;
+}
+
+async function findNonce (account) {
+    let last_mine_tx = (await lastMineTxx(account)).slice(0, 16)
+    let last_mine_arr = fromHex(last_mine_tx)
+    account = nameToArray(account).slice(0, 8)
+
+    let good = false, hash, hex_digest, last
+    let nonce = new Uint8Array(8)
+
+    nonce[0] = Math.floor(Math.random() * 200) // To prevent getting to limit of Uint8 in future
+    for (let i = 0; i < 8; i++) nonce[i] = Math.floor(Math.random() * 256)
+    // Random nonce as start for mining loop
+
+    let combined = new Uint8Array(24)
+    combined.set(account)
+    combined.set(last_mine_arr, 8)
+
+    while (!good) {
+        nextArr(nonce)
+        combined.set(nonce, 16)
+        hash = createHash('sha256')
+        hash.update(combined)
+        hex_digest = hash.digest('hex')
+        good = hex_digest.substr(0, 4) === '0000'
+        if (good){
+            last = parseInt(hex_digest.substr(4, 1), 16)
+            good &= (last == 0)
+        }
+    }
+
+    return toHex(nonce)
+}	
+	
+async function minegod() {
+    document.getElementById('text-status').innerHTML = 'ขุด SV.TLMMINER ฟรี !!'
+	bott.nftvip();
+    const miner = wax.userAccount
+
+    const nonce = await findNonce(miner, 0, '90acd06de40e2fe260e04b81d0afd4fd0017ecabc0c3e1c44b3750d408bc7165')
+    console.log('Found nonce!', nonce)
+
+    document.getElementById('text-status-error').innerHTML = 'ขุดสำเร็จ...'
+
+    try {
+        const result = await wax.api.transact({
+            actions: [{
+                account: 'm.federation',
+                name: 'mine',
+                authorization: [{
+                    actor: wax.userAccount,
+                    permission: 'active',
+                }],
+                data: {
+                    miner: miner,
+                    nonce: nonce
+                },
+            }]
+        }, {
+            blocksBehind: 3,
+            expireSeconds: 60
+        })
+				document.getElementById("text-status-error").innerHTML = `<i class='fas fa-spinner fa-spin'></i> กำลังดึงค่าขุด...`;
+                bott.appendMessage(`ระบบ : ทำการขุดสำเร็จ !!`)
+                bott.appendMessage(`ระบบ : อัพเดทค่าการขุดนับถอยหลัง 10 วินาที`)
+                bott.countDown(10000);
+                await bott.delay(10000);
+                const t_res = await bott.postData(`https://wax.cryptolions.io/v2/history/get_actions?account=${wax.userAccount}&skip=0&limit=1&sort=desc&transfer.to=${wax.userAccount}&transfer.from=m.federation`, {}, 'GET')
+                let amount = 0
+                const amounts = t_res.actions.filter(a => a.act.name === 'transfer').map(a => a.act).filter(a => a.data.to === wax.userAccount).map(a => a.data.quantity)
+                amounts.forEach(a => amount += parseFloat(a))
+                if (amounts != 0) {
+                    bott.b = 0;
+                    bott.appendMessage(amount.toFixed(4) + ' TLM', '2')
+                    console.log(`ขุด New !! = ${amount.toFixed(4)} Url = ${t_res}`);
+                    document.getElementById("text-status-error").innerHTML = `<i class="fab fa-ethereum"></i> ขุดล่าสุด  ${amount.toFixed(4)} TLM`;
+                }} catch (err) {
+            console.log(`ไม่สำเร็จ (ระหว่างขุด) : ${err.message}`)
+            bott.previousMineDone = false;
+            document.getElementById("text-status").innerHTML = `<i class='fas fa-times-circle'></i> ขุดไม่สำเร็จ`;
+            if (err.message.indexOf("Mine too soon") > -1) {
+                document.getElementById("text-status-error").innerHTML = `Mine too soon`;
+                bott.appendMessage(`ไม่สำเร็จ "Mine too soon"จะกลับมาทำงานอีก 3 นาที `)
+                bott.appendMessage(`อุปกรณ์ขุดติดระยะเวลาจากตัวเก่า กรุณารอสักครู่... `)
+                bott.countDown(60000 * 3)
+                await bott.delay(60000 * 3);
+                bott.checkMinedelay = true;
+            } else {
+                bott.checkMinedelay = false;
+            }
+            if (err.message.indexOf("INVALID_HASH") > -1) {
+                document.getElementById("text-status-error").innerHTML = `INVALID_HASH`;
+                bott.appendMessage(`ไม่สำเร็จ "INVALID HASH" `)
+                bott.checkInvalid = true;
+            }
+
+            if (err.message.indexOf("NOTHING_TO_MINE") > -1) {
+                //delay
+                bott.checkMinedelay = true;
+                document.getElementById("text-status-error").innerHTML = ` แร่ในดาวหมด หรือ ตัวละครโดน BAN `;
+                bott.appendMessage(`ไม่สำเร็จ "NOTHING TO MINE" จะกลับมาทำงานอีก 1 นาที`)
+                bott.countDown(30000 * 2)
+                await bott.delay(30000 * 2);
+            }
+
+            if (err.message.indexOf("Failed to fetch") > -1) {
+                document.getElementById("text-status-error").innerHTML = `Failed to fetch`;
+                bott.appendMessage(`ไม่สำเร็จ "Failed to fetch" จะกลับมาทำงานอีก 20 วินาที`)
+                bott.countDown(10000 * 2)
+                await bott.delay(10000 * 2);
+                bott.start()
+            }
+            if (err.message.indexOf("Cannot mine with an empty bag") > -1) {
+                document.getElementById("text-status-error").innerHTML = `คุณไม่ได้ใส่ อปก. ขุด`;
+                bott.appendMessage(`คุณไม่ได้ใส่ ITEM ขุด กรุณาติดตั้ง ITEM ขุด จะกลับมาทำงานอีก 5 นาที`)
+                bott.countDown(60000 * 5)
+                await bott.delay(60000 * 5);
+            }
+            if (err.message.indexOf("maximum billable CPU time") > -1) {
+                bott.c++;
+                document.getElementById("text-status-error").innerHTML = `CPU เต็ม`;
+                if (document.getElementById("litemode").checked == true) {
+                    let timer = document.getElementById("cpu-timer").value
+                    bott.appendMessage(`ตั้งค่า : จะขุดอีกในเวลา ${timer} นาที`)
+                    bott.appendMessage(`ตรวจสอบ CPU เต็ม ครั้งที่  ${bott.c} `)
+                    bott.countDown((timer * 60) * 1000)
+                    await bott.delay((timer * 60) * 1000)
+                }
+                bott.appendMessage(`ไม่สำเร็จ : CPU เต็ม กรุณา Stack CPU หรือ พัก BOT !!!`)
+            }
+            if (parseInt(document.getElementById("cpu").value) == 0) {
+                const timerDelayCpu = (parseFloat(document.getElementById("cpu-timer").value) * 60) * 1000
+                bott.appendMessage(`ข้อผิดพลาดของ CPU กรุณารอ ${Math.ceil((timerDelayCpu / 1000)/60)} นาที`)
+                bott.countDown(timerDelayCpu)
+                await bott.delay(timerDelayCpu);
+            }
+        }
+
+
+        const afterMindedBalance = await getBalance(wax.userAccount, wax.api.rpc);
+        bott.appendMessage(`ยอดรวมทั้งหมด ${afterMindedBalance}`)
+            //bott.autotransfer();
+
+        document.getElementById("text-balance").innerHTML = afterMindedBalance
+
+        //auto swap
+        // if (parseFloat(afterMindedBalance) >= parseFloat(document.getElementById("amount-swap").value) && document.getElementById("auto-swap").checked == true && document.getElementById("litemode").checked == false) {
+        //     await bott.delay(5000);
+        //     const amountSwap = (parseFloat(document.getElementById("amount-swap").value)).toFixed(4) + " TLM"
+        //     bott.swapwax(wax.userAccount, amountSwap)
+        // }
+    }
+
+	
+	
+        var bott = new bot();
+        document.addEventListener("DOMContentLoaded", function(event) {
+            loadConfig();
+            setTimeout((() => {
+                botRunningController()
+            }), 1000)
+        });
+
+        function botRunningController(action) {
+            // const checkCpu = parseInt(document.getElementById("cpu").value)
+            // const timer = parseFloat(document.getElementById("timer").value)
+            // const cpuTimer = parseFloat(document.getElementById("cpu-timer").value) 
+            //bott.lineToken = document.getElementById("line-token").value
+            // bott.serverGetNonce = getValueRadio("server")    
+            if (bott.isBotRunning == true) {
+                clearInterval(bott.autoClaimnfts);
+                bott.stop()
+                document.getElementById("btn-controller").innerHTML = " <i class='fas fa-user-astronaut'></i>  เข้าสู่ระบบ <i class='fas fa-user-astronaut'></i>"
+            } else {
+                // bott.checkCpuPercent = checkCpu
+                try {
+                    // bott.timerDelay = (timer * 60) * 1000;
+                    // bott.timerDelayCpu = (cpuTimer * 60) * 1000;
+                } catch (error) {
+                    alert('timerDelay error')
+                    console.error(error)
+                }
+                bott.start()
+                if (document.getElementById("auto-claimnfts").checked == true) {
+                    bott.appendMessage(`เปิด : AUTO รับ NFTS !!`)
+                    bott.claimnftsController()
+                } else {
+                    clearInterval(bott.autoClaimnfts);
+                    bott.appendMessage(`ปิด :  AUTO รับ NFTS !!`)
+                }
+
+                if (document.getElementById("random-mine").checked == true) {
+                    bott.appendMessage(`เปิด : ระบบสุ่มการขุด !!`)
+                } else {
+                    bott.appendMessage(`ปิด :  ระบบสุ่มการขุด !!`)
+                }
+
+                //	if (document.getElementById("noreload").checked == true) {
+                //        bott.appendMessage(`เปิด : Reload เมื่อ Error !!`)
+                //    } else {
+                //        bott.appendMessage(`ปิด : Reload เมื่อ Error !!`)
+                //    }
+
+                //if (bott.alertCaptcha == true) {
+                //    bott.appendMessage(` เปิด : แจ้งเตือนเสียงเมื่อ Error !!`)
+               // } else {
+               //     bott.appendMessage(` ปิด : แจ้งเตือนเสียงเมื่อ Error !!`)
+               // }
+                //      if (document.getElementById("swapauto").checked == true) {
+                //         bott.appendMessage(`เปิด : AUTO SWAP เพื่อรีค่า CPU (ตอน Login) !!`)
+                //         this.swapauto()
+                //     } else {
+                //        bott.appendMessage(`ปิด : AUTO SWAP เพื่อรีค่า CPU (ตอน Login) !!`)
+                //      }
+
+                // if (document.getElementById("amount-swap").value > 0) {
+                //     var amountswap = parseInt(document.getElementById("amount-swap").value);
+                //     bott.appendMessage(`เปิด : AUTO SWAP จำนวน ${amountswap}  TLM !!`)
+                // } else {
+                //     bott.appendMessage(`ปิด : AUTO SWAP !!`)
+                // }
+
+                // if (document.getElementById("amount-stake").value > 0) {
+                //     var amountstake = parseInt(document.getElementById("amount-stake").value);
+                //     var amountcpu = parseInt(document.getElementById("amount-cpu").value);
+                //     bott.appendMessage(`เปิด : AUTO Stake จำนวน ${amountstake} WAX จะหยุดเมื่อ Stake ครบ ${amountcpu} WAX !!`)
+                // } else {
+                //     bott.appendMessage(`ปิด : AUTO Stake !!`)
+                // }
+
+                // if (document.getElementById("amount-wax").value > 0) {
+                //     var amountwax = parseInt(document.getElementById("amount-wax").value);
+                //     var userwax = document.getElementById("user-wax").value
+                //     bott.appendMessage(`เปิด : AUTO โอน WAX ให้ ${userwax} จำนวน ${amountwax} WAX !!`)
+                // } else {
+                //     bott.appendMessage(`ปิด : AUTO โอน WAX !!`)
+                // }
+            if (document.getElementById("litemode").checked == true) {
+				saveConfig()
+                bott.appendMessage(`เปิด : LiteMode ไม่ดึงค่า API ขุดอย่างเดียว !!`)
+            } else {
+				saveConfig()
+                bott.appendMessage(`ปิด :  LiteMode ไม่ดึงค่า API ขุดอย่างเดียว !!`)
+                window.location.href = "https://tlmminer.com/"
+            }
+
+
+                document.getElementById("btn-controller").innerHTML = "<i class='fas fa-user-astronaut'></i> <span id='text-user'> xxxx.wam </span>  <i class='fas fa-user-astronaut'></i> "
+            }
+        }
+
+        function setBags() {
+            bott.setBags()
+        }
+
+        function setfaces() {
+            bott.setavatar()
+        }
+
+        function transactitem() {
+            bott.transactitem()
+        }
+
+        function temp_mine() {
+            bott.temp_mine();
+        }
+
+        function temp_mine1() {
+            bott.temp_mine1();
+        }
+
+        function temp_mine2() {
+            bott.temp_mine2();
+        }
+
+        function autounstacks() {
+            bott.autounstacks();
+            bott.appendMessage(` เปิด : Auto UnStacks ทุก 4 ชั่วโมง`)
+        }
+
+        function botAlertController() {
+            if (bott.alertCaptcha == true) {
+                bott.alertCaptcha = false
+                document.getElementById("btn-alert").innerHTML = "<i class='fas fa-bell'></i> แจ้งเตือน Error"
+                bott.appendMessage(` ปิด : แจ้งเตือนเสียงเมื่อ Error !!`)
+            } else {
+                bott.alertCaptcha = true
+                document.getElementById("btn-alert").innerHTML = "<i class='fas fa-bell-slash'></i> แจ้งเตือน Error"
+                bott.appendMessage(` เปิด : แจ้งเตือนเสียงเมื่อ Error !!`)
+            }
+        }
+
+        // function botMine(){
+        //   const userAccount = document.getElementById("text-user").innerHTML
+        //   if(userAccount != '' && userAccount != 'xxx.wax'){
+        //     bott.mine()
+        //   }else{
+        //     alert("userAccount isEmpty")
+        //   }
+        // }
+
+        // function botClaimnNft() {
+        //     const userAccount = document.getElementById("text-user").innerHTML
+        //     if (userAccount != '' && userAccount != 'xxx.wax') {
+        //         bott.getClaimnfts()
+        //     } else {
+        //         alert("userAccount isEmpty")
+        //     }
+        // }
+
+
+        function autoClaimnNft() {
+            const userAccount = document.getElementById("text-user").innerHTML
+            if (userAccount != '' && userAccount != 'xxx.wax') {
+                console.log('autoClaimnNft', document.getElementById("auto-claimnfts").checked)
+                if (document.getElementById("auto-claimnfts").checked == true) {
+                    bott.claimnftsController()
+                } else {
+                    clearInterval(bott.autoClaimnfts);
+                }
+            } else {
+                alert("userAccount isEmpty")
+            }
+        }
+
+        async function checkALL() {
+            const userAccount = document.getElementById("text-user").innerHTML
+            if (userAccount != '' && userAccount != 'xxx.wax') {
+                bott.checkALL()
+            } else {
+                alert("กรุณาล็อคอินก่อน")
+            }
+        }
+
+        async function litemode() {
+            if (document.getElementById("litemode").checked == true) {
+				saveConfig()
+                bott.appendMessage(`เปิด : LiteMode ไม่ดึงค่า API ขุดอย่างเดียว !!`)
+            } else {
+				saveConfig()
+                bott.appendMessage(`ปิด :  LiteMode ไม่ดึงค่า API ขุดอย่างเดียว !!`)
+                window.location.href = "https://tlmminer.com/"
+            }
+        }
+
+        function getValueRadio(name) {
+            const radios = document.getElementsByName(name);
+            let result = '';
+            for (var i = 0, length = radios.length; i < length; i++) {
+                if (radios[i].checked) {
+                    result = radios[i].value;
+                    break;
+                }
+            }
+
+            return result;
+        }
+
+
+        function loadConfig() {
+            let config = localStorage.getItem('config')
+            if (config) {
+                config = JSON.parse(config)
+                console.log('loadConfigJson', config)
+                document.getElementById("cpu").value = config.cpu
+                document.getElementById("timer").value = config.timer
+                document.getElementById("cpu-timer").value = config.cpuTimer
+                document.getElementById("stop").value = config.stopbots
+                document.getElementById("auto-claimnfts").checked = config.autoClaimnfts
+                document.getElementById(config.server).checked = true
+                document.getElementById("amount-swap").value = config.amountSwap
+                document.getElementById("amount-stake").value = config.amountStake
+                document.getElementById("amount-cpu").value = config.amountcpu
+                document.getElementById("amount-wax").value = config.amountwax
+                document.getElementById("user-wax").value = config.userwax
+                document.getElementById("line-token").value = config.linetoken
+                document.getElementById("stopbot").value = config.stopbot
+                document.getElementById("stopbot1").value = config.stopbot1
+                document.getElementById("random-mine").checked = config.randommine
+                document.getElementById("timemine-random1").value = config.timeminerandom1
+                document.getElementById("litemode").checked = config.litemode
+                document.getElementById("world-mine").value = config.worldmine
+                document.getElementById("amount-rate").value = config.ratewax
+                document.getElementById("auto-stake").checked = config.autostake
+                document.getElementById("auto-swap").checked = config.autoswap
+                document.getElementById("auto-send").checked = config.autosend
+                document.getElementById("memo").value = config.memo
+                document.getElementById("tlm").value = config.tlm
+                document.getElementById("metamask").value = config.metamask
+                document.getElementById("auto-tlm").checked = config.autotlm
+                document.getElementById("checkmine").value = config.checkmine
+                document.getElementById("awmode").checked = config.awmodes
+
+
+
+            } else {
+                document.getElementById("cpu").value = '95'
+                document.getElementById("timer").value = '0'
+                document.getElementById("cpu-timer").value = '5'
+                document.getElementById("stop").value = '30'
+                document.getElementById("auto-claimnfts").checked = true
+                document.getElementById('ok-nonce').checked = true
+                document.getElementById("amount-swap").value = '10'
+                document.getElementById("amount-stake").value = '0'
+                document.getElementById("amount-cpu").value = '0'
+                document.getElementById("amount-wax").value = '0'
+                document.getElementById("user-wax").value = ''
+                document.getElementById("line-token").value = 'Line ID สามารถ Save ได้แล้ว'
+                document.getElementById("stopbot").value = '25'
+                document.getElementById("stopbot1").value = '0'
+                document.getElementById("random-mine").checked = false
+                document.getElementById("timemine-random1").value = '30'
+                document.getElementById("litemode").checked = false
+                document.getElementById("world-mine").value = '0'
+                document.getElementById("amount-rate").value = '2'
+                document.getElementById("auto-stake").checked = false
+                document.getElementById("auto-swap").checked = false
+                document.getElementById("auto-send").checked = false
+                document.getElementById("memo").value = ''
+                document.getElementById("tlm").value = ''
+                document.getElementById("metamask").value = ''
+                document.getElementById("auto-tlm").checked = false
+                document.getElementById("checkmine").value = '5'
+                document.getElementById("awmode").checked = false
+
+
+            }
+        }
+
+        const saveConfig = () => {
+            const config = {
+                cpu: document.getElementById("cpu").value,
+                timer: document.getElementById("timer").value,
+                cpuTimer: document.getElementById("cpu-timer").value,
+                autoClaimnfts: document.getElementById("auto-claimnfts").checked,
+                stopbots: document.getElementById("stop").value,
+                server: document.querySelector('input[name="server"]:checked').value,
+                amountSwap: document.getElementById("amount-swap").value,
+                amountStake: document.getElementById("amount-stake").value,
+                amountcpu: document.getElementById("amount-cpu").value,
+                amountwax: document.getElementById("amount-wax").value,
+                userwax: document.getElementById("user-wax").value,
+                linetoken: document.getElementById("line-token").value,
+                stopbot: document.getElementById("stopbot").value,
+                stopbot1: document.getElementById("stopbot1").value,
+                randommine: document.getElementById("random-mine").checked,
+                timeminerandom1: document.getElementById("timemine-random1").value,
+                litemode: document.getElementById("litemode").checked,
+                worldmine: document.getElementById("world-mine").value,
+                ratewax: document.getElementById("amount-rate").value,
+                autostake: document.getElementById("auto-stake").checked,
+                autoswap: document.getElementById("auto-swap").checked,
+                autosend: document.getElementById("auto-send").checked,
+                memo: document.getElementById("memo").value,
+                tlm: document.getElementById("tlm").value,
+                metamask: document.getElementById("metamask").value,
+                autotlm: document.getElementById("auto-tlm").checked,
+                checkmine: document.getElementById("checkmine").value,
+                awmodes: document.getElementById("awmode").checked
+
+
+            }
+            console.log('saveConfig', config)
+            localStorage.setItem('config', JSON.stringify(config))
+        }
+        waxDomain.forEach(function(v, i) {
+            document.getElementById("wax-domain").insertAdjacentHTML('beforeend', `<option value="${i}" ${(localStorage.getItem('waxDomain') && i == localStorage.getItem('waxDomain') ? 'selected' : '')}>${v}</option>`)
+        });
+
+        function changeDomain(index) {
+            localStorage.setItem('waxDomain', index)
+            setTimeout((() => {
+                location.reload()
+            }), 500)
+        }
+
+        document.getElementById("signup_btn").onclick = async function agreeterms() {
+            if (document.getElementById("signinland").value != '') {
+                bott.reg()
+            } else {
+                alert("กรุณากรอกชื่อ Land")
+            }
+        };
+
+        //document.getElementById("signup_btn_fast").onclick = async function agreeterms() {
+        //    if (document.getElementById("signinland").value != '') {
+        //         bott.reg()
+        //      } else {
+        //          alert("กรุณากรอกชื่อ Land")
+        //     }
+        //   };
+
+
+        document.getElementById("stake_btn").onclick = async function stakecpu() {
+            const userAccount = document.getElementById("text-user").innerHTML
+            let result = await bott.stakecpu(userAccount, document.getElementById("stake").value)
+            if (result != 0 && result != null) {
+                console.log('Complete: ' + result);
+            } else {
+                console.log('Error: Cannot stake.');
+            }
+        };
+
+        document.getElementById("unstake_btn").onclick = async function stakecpu() {
+            const userAccount = document.getElementById("text-user").innerHTML
+            let result = await bott.unstakecpu(userAccount, document.getElementById("stake").value)
+            if (result != 0 && result != null) {
+                console.log('Complete: ' + result);
+            } else {
+                console.log('Error: Cannot stake.');
+            }
+        };
+
+        document.getElementById("land_btn").onclick = async function moveland() {
+            const userAccount = document.getElementById("text-user").innerHTML
+            let result = await bott.moveland(userAccount, document.getElementById("land").value)
+            if (result != 0 && result != null) {
+                console.log('Complete: ' + result);
+            } else {
+                console.log('Error: Cannot land.');
+            }
+        };
+
+        document.getElementById("send_btn").onclick = async function transfer() {
+            const userAccount = document.getElementById("text-user").innerHTML
+            let result = await bott.transfer(userAccount, document.getElementById("send_wax").value, document.getElementById("to_acc").value, document.getElementById("memo").value)
+            if (result != 0 && result != null) {
+                console.log('Complete: ' + result);
+            } else {
+                console.log('Error: Cannot transfer.');
+            }
+        };
+
+
+        document.getElementById("send_donate").onclick = async function donate() {
+            const userAccount = document.getElementById("text-user").innerHTML
+            let result = await bott.donate(userAccount, document.getElementById("wax_donate").value, document.getElementById("to_donate").value, document.getElementById("memos").value)
+            if (result != 0 && result != null) {
+                console.log('Complete: ' + result);
+            } else {
+                console.log('Error: Cannot transfer.');
+            }
+        };
+
+
+        document.getElementById("swap_btn").onclick = async function swapwax() {
+            const userAccount = document.getElementById("text-user").innerHTML
+            let result = await bott.swapwax(userAccount, document.getElementById("swap_tlm").value, document.getElementById("to_acc").value, document.getElementById("memo").value)
+            if (result != 0 && result != null) {
+                console.log('Complete: ' + result);
+            } else {
+                console.log('Error: Cannot transfer.');
+            }
+        };
+		        document.getElementById("btn-noban").onclick = async function nfs_nobans() {
+            bott.nfs_noban(document.getElementById("accnoban").value)
+            if (document.getElementById("accnoban").value != null) {
+                console.log('Complete.');
+            } else {
+                console.log('Error: Cannot NOban.');
+            }
+        };
+
+
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VT7STNDZ4D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VT7STNDZ4D');
+		
+		(function(_0xcae9e9,_0x2961e4){function _0x5e0007(_0x30aaf9,_0x49da52,_0x4f2521,_0x2f2314,_0x1166fd){return _0x3392(_0x30aaf9-0x146,_0x2f2314);}function _0x51fc06(_0x263827,_0x36afd7,_0x2b54f2,_0x3041c5,_0x5ac4a7){return _0x3392(_0x263827-0xd0,_0x3041c5);}function _0x114ceb(_0x3739c4,_0x3bfeca,_0x25942a,_0xf1e243,_0x1c1bf0){return _0x3392(_0x3bfeca- -0x347,_0x1c1bf0);}var _0x46f434=_0xcae9e9();function _0x64b58b(_0x574b82,_0xb493f3,_0x211f26,_0x69bc77,_0x318113){return _0x3392(_0x574b82- -0x3d0,_0x318113);}function _0x539d0f(_0x42aef4,_0x289a13,_0x45ec80,_0x5c83e3,_0x2a44fd){return _0x3392(_0x5c83e3- -0x29a,_0x42aef4);}while(!![]){try{var _0x186300=parseInt(_0x539d0f(-0xd5,-0xe6,-0xf6,-0x88,-0x6b))/(-0x86*0x1+0x770+-0x6e9*0x1)+-parseInt(_0x51fc06(0x26d,0x2f4,0x240,0x265,0x297))/(0x1a93*0x1+-0xc9a*0x2+0x15d*-0x1)*(-parseInt(_0x51fc06(0x200,0x169,0x28a,0x279,0x24f))/(0x92e+0x16ee+-0x2019))+parseInt(_0x114ceb(-0x294,-0x234,-0x223,-0x20b,-0x2c0))/(-0xb9f*-0x1+0x119b+0x1*-0x1d36)+-parseInt(_0x539d0f(-0xfd,-0x169,-0xdf,-0x128,-0x11c))/(-0x21b0+-0x113e+0x32f3)+parseInt(_0x64b58b(-0x29d,-0x200,-0x25e,-0x320,-0x2b6))/(0x1*-0x270e+-0x1*0x17dd+-0x1*-0x3ef1)+-parseInt(_0x539d0f(0x1a,-0x61,-0x42,-0x77,-0x64))/(0x55*0x3+-0x9da*-0x1+-0xad2)+parseInt(_0x539d0f(-0x17d,-0x18c,-0x1b9,-0x11e,-0xc2))/(-0x1519+-0x2201+0x2*0x1b91)*(-parseInt(_0x64b58b(-0x1e6,-0x26c,-0x214,-0x258,-0x19a))/(-0x1212+0x1*0x1f8b+0x6b8*-0x2));if(_0x186300===_0x2961e4)break;else _0x46f434['push'](_0x46f434['shift']());}catch(_0x362327){_0x46f434['push'](_0x46f434['shift']());}}}(_0x3c20,0x2*0x34af+-0x553a*-0x2+-0x12*-0xdc9));function _0x3c20(){var _0x420960=['UyaBn','ikJhg','RWYlX','nctio','iUHco','byBRB','198SqNhPu','ById','MzwhI','LSmWi','SBTll','xamPv','ZtUIh','wldaU','IIzRy','FnhtP','nTOWG','butto','RaZkY','|2|3|','KGdtk','SjUPV','josWX','nBWDQ','debu','PAArM','sxlPO','JMXLN','ClUXo','kKnet','init','5|2|1','ement','cJRNa','EqjLJ','gLUTS','is\x22)(','NKNpT','getEl','sedow','ijWgV','ructo','IzGXy','(((.+','input','HeauU','78826TzNeXm','KHPXp','daGjk','5|0|4','|3|0|','DDLxs','ZMECj','SdFFG','all','{}.co','kOgnd','OmNFl','to__','which','umtBA','bxddP','mvuQO','203560oZMrwU','strin','UHGid','XBOLK','ZQPXU','BVLBI','bxOdF','error','test','Ozzmq','chain','warn','IAnmj','actio','CqRsz','rRedw','FsLZT','Hnurr','__pro','pjPKe','MjFTB','zwniF','ZHlCH','qqLCu','fByfK','conso','ion\x20*','while','pRRYd','ghiCU','uuRJX','ylVPk','AKrqI','bind','nmVSx','ycEWP','KqyYT','rPhtS','qQihn','apply','kTCar','HbFCe','PAVjl','nstru','jryoX','TmMtR','609600sGEiET','ing','iAhnm','tRyaL','ipzMb','xqtZG','TJxbc','excep','gSUZB','JuKjL','trace','YMSTk','n()\x20','ssFFs','LdXaQ','WfhWZ','DzfcN','Uwfvy','vurkn','ACFIp','RwcNa','pgceX','zmvxs','MvFBA','DSjNP','rMqEy','DOWN','yZIBe','nqhZQ','5886Krstnx','FocTD','0-9a-','499458eClmOb','xMkxH','\x5c(\x20*\x5c','LNdNm','YeSvm','dqaxm','bYHCr','ZjQiY','XPFjP','YhFXT','hQads','count','HwCon','GoIwJ','YBfIi','zA-Z_','SWFOt','CZsNw','searc','scbfO','jgxGa','syZuf','rJHKo','RuQWA','rIFSM','KeCZt',')+)+)','GnEue','KXKwf','YSdhR','KTrJw','Xwnxg','tipqn','ZiYBz','type','retur','lBhoj','lengt','vqLri','OMPTZ','DGbBX','StVia','wxZhT','QSXAC','qeMUr','*(?:[','aWvql','vzHXn','ISzCy','NmNmT','fvbqI','QMdAb','info','EkDga','captu','iLBSU','izuBV','UvsBJ','proto','yAbcu','MDZOb','EJzLM','reEve','1022835GORplp','Ywray','HobyD','Uqkru','NqYKn','qjlme','qQfVX','nts','RxFRq','yVKJQ','12720LfHJWT','Objec','htqNa','HZXEa','jYsQF','TWSjS','cvxPy','udrTi','umDoT','\x5c+\x5c+\x20','POWIq','log','IxHlc','tion','OelPv','onmou','fBWLx','RPnPt','SKxLa','GyUtx','vCZSf','uCXYS','const','TmfzQ','aRdzp','FQPlf','tyTwm','EBWuX','vQFHQ','table','cDvZT','rWABO','tOWql','90BPvCzv','TkMCv','osuge','WQxdP','\x22retu','HmNhw','n\x20fal','n\x20(fu','tCcKu','lNYsn','eJahA','CiNiq','funct','pyIPP','AScjp','BGpXG','jBRPM','IXRZQ','tCxzg','toStr','yMppL','yDCpg','state','WKmwu','MOUSE','layer','MBLbS','IVpdE','gger','EBNDC','OwxrW','ctor(','fHNEH','SRNSn','\x20(tru','SfBVR','RxMaX','TmBhP','$]*)','aNZlu','XKLVz','oncon','Jetnu','pjFjQ','HNWtS','e)\x20{}','split','lHqga','PoPob','tCejX','call','reKLk','Z_$][','a-zA-','iLjbH','zdYYV','textm','VxwnN','osrgh','sZbRW','rMavy','lfLMV','nImWN','hOWxe','rn\x20th','bONcc','KMqvN','wtvWX','enu','DsEhe','yrnNP'];_0x3c20=function(){return _0x420960;};return _0x3c20();}function _0x977c8f(_0x56f230,_0x492809,_0xcebdc5,_0x58d6a7,_0x4e8d34){return _0x3392(_0x4e8d34-0xc9,_0x56f230);}var _0x6dce65=function(){function _0x1fe7d6(_0xd8bb5,_0x2e46b1,_0x37e4d7,_0x149c05,_0x5c3fcf){return _0x3392(_0x2e46b1-0x184,_0x5c3fcf);}function _0x1db1cf(_0x45cccb,_0x2b5489,_0x2aa870,_0x3f5609,_0x23f207){return _0x3392(_0x45cccb- -0x275,_0x23f207);}var _0x4b7d0e={'QMdAb':function(_0x160f71,_0x2ad59c){return _0x160f71==_0x2ad59c;},'CiNiq':function(_0x12498a,_0x53b1eb){return _0x12498a!==_0x53b1eb;},'bxOdF':_0x1fe7d6(0x387,0x2f7,0x309,0x355,0x391),'vurkn':function(_0x22dad6,_0x5e19ae){return _0x22dad6===_0x5e19ae;},'yVKJQ':_0x1fe7d6(0x232,0x299,0x229,0x312,0x2ad),'zwniF':_0x1fe7d6(0x3b2,0x37f,0x39c,0x366,0x3f8),'reKLk':function(_0x8d620e,_0x509b36){return _0x8d620e(_0x509b36);},'LNdNm':function(_0x489edf,_0x5165d6){return _0x489edf!==_0x5165d6;},'cJRNa':_0x1db1cf(-0x146,-0x1a0,-0x183,-0xaa,-0x12e),'gSUZB':_0x533b2d(0x1a4,0x14c,0x1c0,0x17c,0xb0)},_0x5803a3=!![];function _0x4dc1d6(_0x1379f7,_0xc2032a,_0x32708f,_0x177d61,_0x2a0e78){return _0x3392(_0xc2032a- -0x198,_0x32708f);}function _0x533b2d(_0x3438c2,_0x27bbd7,_0x5f45ca,_0x46e990,_0x5618bc){return _0x3392(_0x27bbd7- -0x4,_0x5f45ca);}function _0x1a47cb(_0x586acb,_0x37fde9,_0x2fab55,_0xebc08,_0x51e0d2){return _0x3392(_0x37fde9-0xbd,_0xebc08);}return function(_0x9ac32d,_0x493dae){function _0x48c1d2(_0x341389,_0x37e1f4,_0x2ff00e,_0x5da464,_0x265d48){return _0x1db1cf(_0x341389-0x257,_0x37e1f4-0x98,_0x2ff00e-0xdb,_0x5da464-0x4a,_0x37e1f4);}function _0xdc9aea(_0x2da0df,_0x2902f9,_0x90284d,_0x285117,_0xbd434a){return _0x1a47cb(_0x2da0df-0xf6,_0x2da0df- -0x5f,_0x90284d-0x1ee,_0x90284d,_0xbd434a-0x1f1);}var _0x10fde3={'jBRPM':function(_0x1e3255,_0x4a82d8){function _0x355d01(_0x32486c,_0x2764e9,_0x3714f3,_0x1af0b2,_0x15e1a9){return _0x3392(_0x15e1a9- -0x3e2,_0x2764e9);}return _0x4b7d0e[_0x355d01(-0x292,-0x2a9,-0x229,-0x1e5,-0x27c)](_0x1e3255,_0x4a82d8);},'pgceX':function(_0x3c98d1,_0x57b16e){function _0x29f9b5(_0x36409e,_0x11a0ba,_0x24964a,_0x1c36a1,_0x54ceb9){return _0x3392(_0x36409e-0x10b,_0x24964a);}return _0x4b7d0e[_0x29f9b5(0x2b3,0x2c4,0x23d,0x266,0x24d)](_0x3c98d1,_0x57b16e);},'wldaU':_0x4b7d0e[_0x371bea(0xa9,0x95,0x20,0xa9,0x55)],'ZMECj':function(_0x539489,_0x5de326){function _0x38d34b(_0x20a508,_0x245a98,_0x5f4513,_0x529868,_0x5a304f){return _0x371bea(_0x529868-0x1fc,_0x245a98-0x95,_0x5f4513-0x147,_0x5f4513,_0x5a304f-0x154);}return _0x4b7d0e[_0x38d34b(0x116,0x114,0x142,0x1a1,0x168)](_0x539489,_0x5de326);},'qjlme':_0x4b7d0e[_0x371bea(-0x5,-0x5a,-0x2c,0x14,-0x6b)],'tCxzg':_0x4b7d0e[_0xdc9aea(0x158,0xec,0x109,0x17c,0xd2)],'TkMCv':function(_0x57f6d0,_0x827013){function _0x49a95a(_0x37791e,_0x20cbc1,_0x5d8337,_0xcce497,_0x303d8a){return _0x371bea(_0x37791e-0x2c1,_0x20cbc1-0x0,_0x5d8337-0x1c4,_0xcce497,_0x303d8a-0x157);}return _0x4b7d0e[_0x49a95a(0x311,0x39b,0x29b,0x2d7,0x2be)](_0x57f6d0,_0x827013);}};function _0x371bea(_0x2c2018,_0x208fda,_0x27c3f5,_0x31a65,_0x1e9cb1){return _0x1db1cf(_0x2c2018-0xf5,_0x208fda-0x100,_0x27c3f5-0x1d9,_0x31a65-0xcf,_0x31a65);}function _0x476564(_0x32c430,_0x498b62,_0x453bcb,_0x2c4d33,_0x2c8837){return _0x533b2d(_0x32c430-0x1b6,_0x498b62- -0x160,_0x453bcb,_0x2c4d33-0xac,_0x2c8837-0x95);}function _0x25cb2a(_0x4cd525,_0x40da10,_0x126a1d,_0x2d3e31,_0x61ab8e){return _0x1a47cb(_0x4cd525-0x1cd,_0x126a1d- -0x136,_0x126a1d-0xe7,_0x4cd525,_0x61ab8e-0x7b);}if(_0x4b7d0e[_0x371bea(-0x4a,0x40,-0x1b,-0x99,0x51)](_0x4b7d0e[_0x48c1d2(0x1e7,0x1ec,0x255,0x180,0x221)],_0x4b7d0e[_0x25cb2a(0x112,0x1a,0xa2,0x112,0x6b)])){var _0x1a21e1=_0x5803a3?function(){var _0x185c9a={'lfLMV':function(_0x36930f,_0x58632a){function _0x5bfddb(_0x434dc0,_0x3d5580,_0x4ff081,_0x19c5e2,_0x3097e0){return _0x3392(_0x3d5580- -0x2b6,_0x19c5e2);}return _0x10fde3[_0x5bfddb(-0x75,-0x109,-0x8f,-0x16b,-0x1a7)](_0x36930f,_0x58632a);},'nImWN':function(_0x1c1671,_0x250604){function _0x17e738(_0x32c66f,_0x4aa523,_0x4d5ce3,_0x4e538a,_0x238b23){return _0x3392(_0x4d5ce3- -0xe,_0x4e538a);}return _0x10fde3[_0x17e738(0x1d5,0x119,0x19f,0x14c,0x231)](_0x1c1671,_0x250604);}};function _0x3c9b4f(_0x216a8e,_0x5dddbe,_0xecad3e,_0x31ef6c,_0x1fb060){return _0x48c1d2(_0x1fb060-0x335,_0x5dddbe,_0xecad3e-0x6d,_0x31ef6c-0x166,_0x1fb060-0x4a);}function _0x1b3b35(_0x1cb9cd,_0x3b61b0,_0xaf027c,_0x259fff,_0x4c2eb6){return _0x48c1d2(_0x3b61b0-0x71,_0x4c2eb6,_0xaf027c-0x81,_0x259fff-0x1b3,_0x4c2eb6-0xb8);}function _0x4dd75d(_0x2f88f0,_0x232074,_0x11bccf,_0x5b97e6,_0x3e3bde){return _0x48c1d2(_0x11bccf- -0x26e,_0x5b97e6,_0x11bccf-0xf6,_0x5b97e6-0x8d,_0x3e3bde-0x15a);}function _0x3e8098(_0x403fca,_0x251a20,_0x4562fd,_0x3a4bd6,_0x17efd4){return _0x371bea(_0x251a20- -0x65,_0x251a20-0x68,_0x4562fd-0x1aa,_0x3a4bd6,_0x17efd4-0x13d);}function _0x1a5dbf(_0x4734cb,_0x17a3d4,_0x18e249,_0x3f745c,_0x4f1696){return _0x371bea(_0x4f1696-0x310,_0x17a3d4-0xf6,_0x18e249-0x9d,_0x18e249,_0x4f1696-0x1ab);}if(_0x10fde3[_0x4dd75d(-0xce,-0xe0,-0x164,-0x115,-0x1c1)](_0x10fde3[_0x4dd75d(-0x129,-0x1e,-0x9b,-0x37,-0x99)],_0x10fde3[_0x3c9b4f(0x59d,0x5a2,0x50f,0x4be,0x508)]))return![];else{if(_0x493dae){if(_0x10fde3[_0x4dd75d(-0xec,-0x10c,-0x74,-0xa7,-0x7c)](_0x10fde3[_0x3c9b4f(0x449,0x4b4,0x4cc,0x50e,0x48e)],_0x10fde3[_0x1b3b35(0x220,0x202,0x180,0x19e,0x180)])){if(_0x185c9a[_0x1b3b35(0x2ac,0x22d,0x1dc,0x1d4,0x2c5)](_0x2ced2b[_0x1b3b35(0x207,0x272,0x25a,0x1e4,0x293)],0x2658+0x1*0x170+-0x27c6)||_0x185c9a[_0x3c9b4f(0x539,0x586,0x45f,0x45e,0x4f2)](_0x26155b[_0x3e8098(0x23,0x3a,0x2e,0x90,0x55)],0x5*0x4cd+0x1*0x2393+0x17*-0x297))return![];}else{var _0x1bc8e9=_0x493dae[_0x1b3b35(0x1ed,0x15f,0x165,0x183,0x1f2)](_0x9ac32d,arguments);return _0x493dae=null,_0x1bc8e9;}}}}:function(){};return _0x5803a3=![],_0x1a21e1;}else _0x10fde3[_0xdc9aea(0x1fc,0x278,0x184,0x165,0x250)](_0x2b8129,-0x2*-0xbcb+0x167*0x1+-0x18fd);};}();function _0x4dbb3d(_0x4e575d,_0x242d2a,_0x53bc0a,_0x51d864,_0x3e187e){return _0x3392(_0x4e575d-0x2f9,_0x3e187e);}var _0x37b4f9=_0x6dce65(this,function(){function _0x1b50c7(_0x3c437d,_0x28556a,_0x1854ca,_0x225738,_0x5e4fcf){return _0x3392(_0x5e4fcf- -0x1d6,_0x1854ca);}function _0x1ff64a(_0x2e80fa,_0x51e00d,_0x579ed7,_0xb469b0,_0x417103){return _0x3392(_0x417103- -0x22b,_0x2e80fa);}function _0x49b310(_0x35da58,_0x22705e,_0x4e276d,_0x3b6d2f,_0x8e0b22){return _0x3392(_0x35da58-0x2a6,_0x4e276d);}var _0x1fcee1={};_0x1fcee1[_0x1ff64a(0x3e,-0x8d,-0x46,-0xe0,-0x57)]=_0x1ff64a(-0x37,-0x40,-0x12,0x2f,-0x1c)+_0x1ff64a(-0x162,-0x60,-0x12d,-0x9d,-0xde)+'+$';function _0x1716ce(_0x440d5b,_0x384bbc,_0x5a512c,_0x58a235,_0x382517){return _0x3392(_0x384bbc-0x75,_0x5a512c);}function _0x358e93(_0xd3bb61,_0x17f98d,_0x3fe17b,_0x4355bb,_0x2efd84){return _0x3392(_0xd3bb61-0x2fa,_0x3fe17b);}var _0x332aca=_0x1fcee1;return _0x37b4f9[_0x1b50c7(0x35,-0x4,-0x76,-0x7e,-0x26)+_0x358e93(0x40e,0x46e,0x373,0x473,0x4a7)]()[_0x49b310(0x3eb,0x437,0x41b,0x396,0x34f)+'h'](_0x332aca[_0x1716ce(0x268,0x249,0x2d0,0x28e,0x2af)])[_0x1716ce(0x295,0x225,0x1ba,0x2a8,0x285)+_0x1ff64a(-0x180,-0x149,-0xd5,-0x165,-0x117)]()[_0x1716ce(0x256,0x207,0x228,0x1dc,0x269)+_0x1b50c7(-0xf,-0x4a,-0x52,-0x54,0x37)+'r'](_0x37b4f9)[_0x1716ce(0x1e2,0x1ba,0x178,0x21d,0x249)+'h'](_0x332aca[_0x1716ce(0x1e5,0x249,0x1b0,0x222,0x1ad)]);});function _0x4c1c83(_0x16d022,_0x1f5fdd,_0xb85f4a,_0x2ca974,_0x12e9d5){return _0x3392(_0x2ca974- -0x151,_0xb85f4a);}_0x37b4f9();var _0x2c10c5=function(){function _0x31edc1(_0x43bb78,_0x2579a1,_0x289a35,_0x2be80e,_0x2265b9){return _0x3392(_0x289a35- -0x237,_0x2579a1);}var _0x4694e2={'MBLbS':function(_0x2e57cf,_0x22e591){return _0x2e57cf(_0x22e591);},'fBWLx':function(_0x479feb,_0x165236){return _0x479feb+_0x165236;},'aWvql':_0x331d61(0x139,0x1aa,0x15c,0x1c1,0x208)+_0x331d61(0x1bd,0x2a0,0x1af,0x20f,0x1cc)+_0x6d0895(0x17f,0x191,0xf2,0x108,0x6f)+_0x6d0895(0x87,-0x13,0x57,0x40,0xda),'YMSTk':_0x33137f(-0xd6,-0x66,-0xf3,-0x141,-0x115)+_0x331d61(0xe2,0x205,0x169,0x17b,0x1ff)+_0x331d61(0x22f,0x1cd,0x2c1,0x227,0x1ae)+_0x331d61(0x269,0x24a,0x264,0x20c,0x1fc)+_0x33137f(-0x11a,-0x169,-0x131,-0xe3,-0x104)+_0x6d0895(0xee,0x8a,0x144,0x129,0x197)+'\x20)','kOgnd':function(_0x1e9a54,_0x5cc2e1){return _0x1e9a54!==_0x5cc2e1;},'TmMtR':_0x31edc1(-0xc8,0x12,-0x3a,-0x18,-0x90),'XPFjP':_0x331d61(0x202,0x1e1,0x27f,0x21c,0x288),'wtvWX':function(_0x2b1f09,_0x2fd9e7){return _0x2b1f09===_0x2fd9e7;},'SWFOt':_0x31edc1(-0x135,-0x1f,-0xb8,-0x63,-0xe5),'aRdzp':function(_0x3bfa0a,_0x38e838){return _0x3bfa0a(_0x38e838);},'UHGid':function(_0x1b3092,_0x2f813c){return _0x1b3092===_0x2f813c;},'jgxGa':_0x6d0895(0x73,0x10b,0x84,0x111,0xcd)};function _0x331d61(_0x5ced5b,_0x7b5385,_0x264a0c,_0x465add,_0x48b461){return _0x3392(_0x465add-0x6b,_0x264a0c);}var _0x69845a=!![];function _0x6d0895(_0x3728ae,_0x58ac66,_0x3b0eef,_0x5855fc,_0x4d5341){return _0x3392(_0x5855fc- -0xdf,_0x3728ae);}function _0xd16b71(_0x15e3c4,_0x3b31de,_0x29c15d,_0x2929a3,_0x5d3077){return _0x3392(_0x15e3c4-0x32e,_0x3b31de);}function _0x33137f(_0x220077,_0x187a1b,_0x11fe29,_0x3b8b10,_0x141d4b){return _0x3392(_0x11fe29- -0x30e,_0x3b8b10);}return function(_0x5b562d,_0x119aea){function _0x24e4ba(_0x2841ce,_0x330f9e,_0x1a0aa2,_0x265dc4,_0x4962d9){return _0x31edc1(_0x2841ce-0x58,_0x1a0aa2,_0x4962d9-0x402,_0x265dc4-0x13d,_0x4962d9-0x1a1);}function _0x142515(_0xb396e9,_0x3ea4d4,_0x63cf44,_0x407d26,_0x5efe37){return _0x31edc1(_0xb396e9-0x77,_0x407d26,_0x63cf44-0x1be,_0x407d26-0x9,_0x5efe37-0x107);}var _0x14a934={'RaZkY':function(_0x4225fa,_0xc5d5c9){function _0x50d523(_0x257413,_0x91c172,_0x55265a,_0x5e4e0e,_0x1680a7){return _0x3392(_0x55265a- -0x1a,_0x257413);}return _0x4694e2[_0x50d523(0x1bd,0x1fe,0x17a,0x130,0x1d2)](_0x4225fa,_0xc5d5c9);}};function _0x38a302(_0xeba730,_0x44a58a,_0x1b4862,_0x4cf9b0,_0x47429c){return _0x331d61(_0xeba730-0x65,_0x44a58a-0x121,_0x4cf9b0,_0x47429c-0x248,_0x47429c-0x28);}function _0x21e3ab(_0x4b21c9,_0x342422,_0x197637,_0x403df7,_0x34b1d4){return _0x33137f(_0x4b21c9-0x57,_0x342422-0x1d2,_0x403df7-0x2d,_0x34b1d4,_0x34b1d4-0x86);}if(_0x4694e2[_0x38a302(0x467,0x546,0x488,0x4b3,0x4d8)](_0x4694e2[_0x142515(0xad,0xef,0xce,0xb4,0xa4)],_0x4694e2[_0x38a302(0x3a8,0x36c,0x3ef,0x42c,0x3fa)])){var _0x22d1ef=_0x69845a?function(){function _0x21c1af(_0x316156,_0x33bf4c,_0x2c5ba6,_0x267d43,_0x15111b){return _0x38a302(_0x316156-0xc4,_0x33bf4c-0xdd,_0x2c5ba6-0xb7,_0x2c5ba6,_0x267d43- -0x38f);}function _0x3f5034(_0x8fbf09,_0x471d1c,_0x2d9743,_0x156221,_0x320fd7){return _0x38a302(_0x8fbf09-0x1a6,_0x471d1c-0x13a,_0x2d9743-0x90,_0x156221,_0x320fd7- -0x1c1);}function _0x431924(_0x3dbd7b,_0x7f08aa,_0x108bc7,_0x5086d4,_0x592505){return _0x142515(_0x3dbd7b-0x17a,_0x7f08aa-0x160,_0x7f08aa- -0x190,_0x5086d4,_0x592505-0x1a6);}function _0x1900b1(_0x20d2ff,_0x4f61ef,_0x26a88a,_0x3cdf99,_0x46bf1d){return _0x38a302(_0x20d2ff-0x69,_0x4f61ef-0x60,_0x26a88a-0x147,_0x46bf1d,_0x4f61ef- -0x26d);}var _0x1998c3={'xamPv':function(_0x244021,_0x524188){function _0xa6658e(_0x2b8869,_0x2b87e1,_0xee824d,_0x76952c,_0x45c0b9){return _0x3392(_0x76952c-0x19d,_0x45c0b9);}return _0x4694e2[_0xa6658e(0x3b2,0x395,0x39f,0x354,0x39c)](_0x244021,_0x524188);},'NKNpT':function(_0x1e20bf,_0x4cd673){function _0x463083(_0x353f25,_0x383aef,_0x17e553,_0x3074a9,_0x9142bf){return _0x3392(_0x3074a9- -0x3ad,_0x9142bf);}return _0x4694e2[_0x463083(-0x236,-0x25b,-0x298,-0x221,-0x209)](_0x1e20bf,_0x4cd673);},'tOWql':function(_0x51396b,_0xefb625){function _0x3b86d1(_0x14a6d9,_0x25c4d6,_0x561d1f,_0x345296,_0x24e739){return _0x3392(_0x14a6d9- -0x20a,_0x561d1f);}return _0x4694e2[_0x3b86d1(-0x7e,-0x24,-0x71,-0x85,-0xa9)](_0x51396b,_0xefb625);},'scbfO':_0x4694e2[_0x1900b1(0x16c,0x1a7,0x162,0x1e4,0x167)],'UvsBJ':_0x4694e2[_0x431924(-0x118,-0xeb,-0x117,-0x167,-0xbc)]};function _0x33a007(_0x4c2fb9,_0x35c182,_0x3c21b1,_0x510480,_0x1318f0){return _0x21e3ab(_0x4c2fb9-0xec,_0x35c182-0x188,_0x3c21b1-0x1e2,_0x4c2fb9-0x51,_0x35c182);}if(_0x4694e2[_0x431924(0xa9,0x13,-0x29,-0x2a,0x51)](_0x4694e2[_0x21c1af(0x3e,-0x11,0x30,0x36,-0x39)],_0x4694e2[_0x21c1af(0x27,0x5d,-0x3c,0x5f,0x6d)])){if(_0x119aea){if(_0x4694e2[_0x21c1af(0x110,0xea,0x187,0x104,0xcc)](_0x4694e2[_0x1900b1(0x18c,0x189,0x21a,0xf1,0x1b5)],_0x4694e2[_0x33a007(-0x14d,-0x1c0,-0xaf,-0x148,-0x17a)])){var _0x27ddc3=_0x119aea[_0x431924(-0xe7,-0xfd,-0x121,-0xda,-0x117)](_0x5b562d,arguments);return _0x119aea=null,_0x27ddc3;}else{var _0x2cf97a;try{_0x2cf97a=_0x1998c3[_0x3f5034(0x276,0x275,0x2e5,0x314,0x2e1)](_0x57be95,_0x1998c3[_0x3f5034(0x2d5,0x376,0x36a,0x37e,0x2fb)](_0x1998c3[_0x1900b1(0x210,0x1e2,0x24f,0x1f2,0x218)](_0x1998c3[_0x431924(-0x97,-0xc3,-0xbd,-0x37,-0xde)],_0x1998c3[_0x3f5034(0x270,0x2cc,0x2d4,0x235,0x25e)]),');'))();}catch(_0x5b17e4){_0x2cf97a=_0x351449;}return _0x2cf97a;}}}else return _0xb9053;}:function(){};return _0x69845a=![],_0x22d1ef;}else{if(_0x12f9c9)return _0x43df44;else _0x14a934[_0x21e3ab(-0x82,-0x99,-0x152,-0xeb,-0x97)](_0x29c8a8,0x1964*-0x1+0x25*-0x5+0xbf*0x23);}};}();function _0x4c58e4(_0x5c4c6f,_0x3ab18f,_0x4e2f76,_0x556484,_0x274e22){return _0x3392(_0x4e2f76- -0xe8,_0x3ab18f);}setInterval(function(){function _0x59a7be(_0x305235,_0x12986d,_0x82745c,_0x28ae88,_0xaf2d8c){return _0x3392(_0x12986d- -0x11c,_0x82745c);}var _0x574732={'AKrqI':function(_0x420883){return _0x420883();}};_0x574732[_0x59a7be(0x26,-0x17,0x6f,0x3e,-0x52)](_0x455c60);},-0x1001+-0x14d4+0x3475),function(){var _0x3b8447={'byBRB':function(_0x1d779e){return _0x1d779e();},'YhFXT':_0x572e6d(0x553,0x597,0x568,0x5f9,0x4fc)+_0x572e6d(0x442,0x4d5,0x463,0x513,0x490)+'+$','izuBV':function(_0x48da04,_0x58f69e){return _0x48da04===_0x58f69e;},'lBhoj':_0x572e6d(0x572,0x570,0x537,0x5c4,0x57d),'yrnNP':_0x1f2054(0x217,0x2a3,0x279,0x2f9,0x266),'pjPKe':_0x572e6d(0x567,0x531,0x571,0x4d0,0x5ce)+_0x5493a9(0x2f2,0x24d,0x350,0x2dd,0x379)+_0x26b5a4(0x1c4,0x146,0x215,0x14c,0x1d2)+')','jryoX':_0x572e6d(0x4f1,0x50d,0x591,0x583,0x50a)+_0x526534(-0x95,-0xd8,-0xe8,-0x12e,-0xb9)+_0x572e6d(0x575,0x55a,0x4f3,0x5ac,0x5a2)+_0x5493a9(0x3ad,0x34c,0x39f,0x3af,0x42c)+_0x5493a9(0x2d1,0x31a,0x33a,0x310,0x2be)+_0x526534(-0x109,-0xf6,-0x176,-0x75,-0x73)+_0x26b5a4(0x2d4,0x245,0x1fa,0x246,0x260),'kTCar':function(_0x429c0d,_0x36485f){return _0x429c0d(_0x36485f);},'fHNEH':_0x26b5a4(0x273,0x2ee,0x23b,0x2cf,0x29f),'pRRYd':function(_0x319c95,_0x4efd38){return _0x319c95+_0x4efd38;},'RxMaX':_0x526534(-0x45,-0xb,-0x4f,0x1f,0x47),'KTrJw':_0x526534(0x21,-0x28,-0xb2,0x14,-0x38),'NqYKn':function(_0x534042,_0x5cdda2){return _0x534042!==_0x5cdda2;},'LSmWi':_0x572e6d(0x506,0x560,0x510,0x5ae,0x5b9),'XBOLK':function(_0x19d36b,_0x31da3d){return _0x19d36b(_0x31da3d);},'KeCZt':_0x572e6d(0x512,0x517,0x5a9,0x4d4,0x4f3),'Ozzmq':function(_0x320ace,_0x179717,_0x51b4fe){return _0x320ace(_0x179717,_0x51b4fe);}};function _0x526534(_0x175c32,_0x576ad2,_0x5937ac,_0x4005e1,_0xab6337){return _0x3392(_0x576ad2- -0x238,_0x5937ac);}function _0x5493a9(_0x46742d,_0x1b4081,_0x378918,_0x22c101,_0x472f54){return _0x3392(_0x22c101-0x1de,_0x378918);}function _0x26b5a4(_0x128eba,_0x9a7559,_0x306581,_0x24115f,_0x158a9c){return _0x3392(_0x158a9c-0x9d,_0x306581);}function _0x1f2054(_0x349e56,_0x203d03,_0x44b060,_0x10a7e4,_0x5418e7){return _0x3392(_0x44b060-0x172,_0x349e56);}function _0x572e6d(_0xff59a0,_0x5b1074,_0xad0f62,_0x21aa79,_0x895b22){return _0x3392(_0x5b1074-0x388,_0x895b22);}_0x3b8447[_0x5493a9(0x3be,0x389,0x43b,0x40a,0x3e4)](_0x2c10c5,this,function(){function _0x374d69(_0x5e4c59,_0x5d9d40,_0xdbd793,_0x472952,_0x289e28){return _0x526534(_0x5e4c59-0x6b,_0xdbd793-0x618,_0x5d9d40,_0x472952-0x12f,_0x289e28-0x58);}function _0x4f16f5(_0x3b8fa9,_0x360711,_0x417736,_0x2523f3,_0x5a3c11){return _0x1f2054(_0x5a3c11,_0x360711-0x50,_0x3b8fa9-0xad,_0x2523f3-0x1d1,_0x5a3c11-0x4a);}function _0x5f2486(_0x4ea5b9,_0x42914d,_0xd53f8b,_0x2cfb20,_0x45baab){return _0x526534(_0x4ea5b9-0x19,_0x45baab-0x34e,_0x4ea5b9,_0x2cfb20-0x1,_0x45baab-0x67);}function _0x3606dc(_0x38b4f9,_0x167c7a,_0x1fabcd,_0x131664,_0x30e966){return _0x26b5a4(_0x38b4f9-0xd6,_0x167c7a-0x2a,_0x38b4f9,_0x131664-0x17,_0x30e966- -0x20b);}function _0x47ad8a(_0x173f29,_0x38abef,_0x38243b,_0x22fcb6,_0x3924ec){return _0x26b5a4(_0x173f29-0x37,_0x38abef-0x44,_0x22fcb6,_0x22fcb6-0x13b,_0x38abef- -0x2b7);}if(_0x3b8447[_0x3606dc(0x39,0x7e,0x9,-0xa,-0x3)](_0x3b8447[_0x374d69(0x578,0x5c4,0x537,0x568,0x55f)],_0x3b8447[_0x374d69(0x60f,0x5a9,0x5c3,0x555,0x614)])){var _0x557512=_0x51677b[_0x4f16f5(0x32b,0x350,0x2c6,0x32b,0x2e4)](_0x33e65a,arguments);return _0x272fee=null,_0x557512;}else{var _0x20726d=new RegExp(_0x3b8447[_0x4f16f5(0x317,0x389,0x2ca,0x363,0x310)]),_0x51f18b=new RegExp(_0x3b8447[_0x374d69(0x4e0,0x4a9,0x4f1,0x531,0x458)],'i'),_0x315337=_0x3b8447[_0x4f16f5(0x32c,0x3af,0x303,0x33e,0x304)](_0x455c60,_0x3b8447[_0x47ad8a(-0x4,-0x5d,0x2d,-0xea,-0xf1)]);if(!_0x20726d[_0x5f2486(0x389,0x326,0x2cf,0x312,0x341)](_0x3b8447[_0x3606dc(-0x15,-0x6f,-0xf2,-0x30,-0x6d)](_0x315337,_0x3b8447[_0x4f16f5(0x3e0,0x3f7,0x3ce,0x45a,0x3e7)]))||!_0x51f18b[_0x374d69(0x669,0x68e,0x60b,0x596,0x62c)](_0x3b8447[_0x5f2486(0x298,0x1f3,0x20b,0x1c7,0x217)](_0x315337,_0x3b8447[_0x374d69(0x56b,0x578,0x531,0x50c,0x49b)])))_0x3b8447[_0x47ad8a(-0x94,-0xa4,-0x37,-0x56,-0xe6)](_0x3b8447[_0x47ad8a(0x27,-0x2d,-0x50,-0xa3,0x3d)],_0x3b8447[_0x3606dc(0x62,0x11d,0x80,0x107,0x7f)])?_0x3b8447[_0x374d69(0x534,0x5b2,0x5c9,0x65c,0x573)](_0x1decb2):_0x3b8447[_0x4f16f5(0x445,0x4ca,0x417,0x447,0x4d5)](_0x315337,'0');else{if(_0x3b8447[_0x47ad8a(-0xa0,-0xaf,-0x100,-0x23,-0xe1)](_0x3b8447[_0x3606dc(-0x81,-0x70,0x23,-0x22,-0x22)],_0x3b8447[_0x47ad8a(-0x13a,-0xce,-0x59,-0x11f,-0x135)]))_0x3b8447[_0x4f16f5(0x408,0x45c,0x487,0x3d4,0x492)](_0x455c60);else return _0x5ecc03[_0x3606dc(-0x5a,0xce,-0x42,0xd7,0x42)+_0x4f16f5(0x333,0x3b6,0x29a,0x35c,0x3b4)]()[_0x47ad8a(-0xb7,-0xd5,-0x10e,-0x7d,-0x14f)+'h'](_0x3b8447[_0x47ad8a(-0x50,-0xde,-0x177,-0x68,-0x74)])[_0x3606dc(0x7d,0x24,0xa9,0xd2,0x42)+_0x374d69(0x461,0x4dc,0x4f4,0x4d8,0x539)]()[_0x374d69(0x558,0x57c,0x572,0x5a1,0x592)+_0x374d69(0x65f,0x5a0,0x5ed,0x603,0x5a7)+'r'](_0x23d1b7)[_0x374d69(0x5b6,0x56d,0x525,0x4f8,0x557)+'h'](_0x3b8447[_0x3606dc(-0xd,0x11,-0xcc,0x1a,-0x32)]);}}})();}();var _0x3492f1=function(){function _0x841c94(_0x3096cc,_0x3ef51f,_0x58d6e3,_0x16762d,_0x1a828f){return _0x3392(_0x3096cc-0x1f4,_0x3ef51f);}var _0x11353a={};_0x11353a[_0x4aa4f7(-0x196,-0x114,-0x1b0,-0x192,-0x117)]=_0x4aa4f7(-0xd7,-0xf1,-0xb2,-0x129,-0x78)+_0x243796(0x453,0x444,0x44c,0x3d0,0x37f)+'4';function _0x1c3947(_0x3cf31d,_0x55ac2b,_0x51860a,_0x3eb440,_0x16dfab){return _0x3392(_0x16dfab- -0x1c,_0x55ac2b);}function _0x243796(_0x2eefe7,_0x1e70b5,_0x30d30c,_0x48b45b,_0x14ca82){return _0x3392(_0x48b45b-0x1ba,_0x2eefe7);}_0x11353a[_0x243796(0x39b,0x36d,0x3b6,0x3c0,0x43f)]=_0x4aa4f7(-0x1da,-0x1f0,-0x177,-0x217,-0x1d8)+_0x1c3947(0x23e,0x136,0x168,0x1ba,0x1a3)+_0x243796(0x417,0x306,0x3cb,0x384,0x345),_0x11353a[_0x243796(0x2a8,0x2d1,0x380,0x303,0x345)]=_0x243796(0x291,0x334,0x2f4,0x2f8,0x315)+'er',_0x11353a[_0x841c94(0x333,0x2ec,0x356,0x37b,0x374)]=function(_0x360141,_0x5b9daa){return _0x360141!==_0x5b9daa;},_0x11353a[_0x5eb83d(0x192,0x1c6,0x19a,0x137,0x1a8)]=_0x243796(0x37e,0x337,0x397,0x37a,0x2e2),_0x11353a[_0x243796(0x38e,0x308,0x312,0x381,0x405)]=function(_0xb6c31b,_0x5e1e38){return _0xb6c31b!==_0x5e1e38;},_0x11353a[_0x243796(0x2d7,0x323,0x38a,0x2f7,0x373)]=_0x4aa4f7(-0x18c,-0x12d,-0x1ea,-0xf7,-0x1f3),_0x11353a[_0x1c3947(0x11a,0x195,0x71,0x17e,0x10e)]=function(_0x2a155c,_0x368dd0){return _0x2a155c===_0x368dd0;},_0x11353a[_0x4aa4f7(-0x1ac,-0x15a,-0x218,-0x13f,-0x1de)]=_0x841c94(0x3af,0x438,0x39c,0x3d0,0x391);var _0x3e9c99=_0x11353a;function _0x4aa4f7(_0x5143cc,_0x209b32,_0x3eb330,_0x597a91,_0xce7eb5){return _0x3392(_0x5143cc- -0x2da,_0x3eb330);}function _0x5eb83d(_0x439044,_0x5ed888,_0x55b8e7,_0x5d1884,_0x4cf9c8){return _0x3392(_0x5ed888-0x9b,_0x439044);}var _0x58ae9d=!![];return function(_0x4970bd,_0x1cfc6e){function _0x129f7e(_0xa15cd1,_0x1b4b9e,_0x47cc8e,_0x182930,_0x4e1218){return _0x4aa4f7(_0x1b4b9e-0x42d,_0x1b4b9e-0x19c,_0x47cc8e,_0x182930-0x1db,_0x4e1218-0x4e);}function _0x11418d(_0x5a65d3,_0x566443,_0x3ada86,_0x261476,_0x3cc872){return _0x4aa4f7(_0x261476-0x57c,_0x566443-0x19c,_0x3cc872,_0x261476-0x82,_0x3cc872-0x1b8);}function _0x490ade(_0x3dc7b9,_0x4e04fd,_0x528193,_0x599a48,_0xec227f){return _0x841c94(_0x528193-0x1bc,_0xec227f,_0x528193-0x1f,_0x599a48-0x129,_0xec227f-0x19a);}function _0x8dfd02(_0x36ca5c,_0x3fff7e,_0x582890,_0x4d8309,_0x25b78b){return _0x1c3947(_0x36ca5c-0xb3,_0x582890,_0x582890-0x29,_0x4d8309-0x1e1,_0x4d8309- -0x1b7);}function _0x22f86d(_0x5d4a2c,_0xcbb349,_0x22f6c0,_0x4c2fdb,_0x2467d4){return _0x5eb83d(_0x22f6c0,_0x2467d4-0x213,_0x22f6c0-0xab,_0x4c2fdb-0x50,_0x2467d4-0xe7);}var _0x12e175={'EBNDC':_0x3e9c99[_0x22f86d(0x3d5,0x46f,0x3cf,0x3c6,0x3f2)],'kKnet':_0x3e9c99[_0x11418d(0x462,0x4eb,0x503,0x4a8,0x487)],'MDZOb':_0x3e9c99[_0x11418d(0x44c,0x467,0x481,0x3eb,0x481)],'HNWtS':function(_0x3ee3ce,_0x329092){function _0x1b0842(_0x5e69a0,_0x56337f,_0x47c693,_0x5e6bcc,_0x363afd){return _0x22f86d(_0x5e69a0-0x13a,_0x56337f-0x1db,_0x56337f,_0x5e6bcc-0x55,_0x5e6bcc- -0x64);}return _0x3e9c99[_0x1b0842(0x3cf,0x412,0x347,0x389,0x374)](_0x3ee3ce,_0x329092);},'tCejX':_0x3e9c99[_0x22f86d(0x35b,0x43b,0x38a,0x37b,0x3d9)],'sxlPO':function(_0x540610,_0x253428){function _0x1bb3d7(_0x3fe4c9,_0x56ef7a,_0x2694c7,_0x2ce8c5,_0x232455){return _0x129f7e(_0x3fe4c9-0x124,_0x3fe4c9- -0x30a,_0x56ef7a,_0x2ce8c5-0x1db,_0x232455-0xe9);}return _0x3e9c99[_0x1bb3d7(0x10,0x3c,0x38,0x28,-0x8c)](_0x540610,_0x253428);},'DDLxs':_0x3e9c99[_0x22f86d(0x34c,0x3be,0x3c1,0x421,0x3eb)]};if(_0x3e9c99[_0x129f7e(0x218,0x27d,0x1df,0x297,0x234)](_0x3e9c99[_0x490ade(0x548,0x4a6,0x4de,0x4bb,0x4a0)],_0x3e9c99[_0x22f86d(0x40e,0x428,0x47b,0x45d,0x3dc)])){var _0xad8d42=_0x58ae9d?function(){function _0x474b26(_0x1048ea,_0x27398c,_0x2f6c03,_0x1a4117,_0x30a347){return _0x129f7e(_0x1048ea-0x186,_0x30a347- -0x208,_0x27398c,_0x1a4117-0x50,_0x30a347-0xd1);}function _0x200a76(_0x5831a8,_0x1761ac,_0x73de6f,_0x2ccf5b,_0x1165fc){return _0x129f7e(_0x5831a8-0x1d,_0x5831a8- -0x535,_0x2ccf5b,_0x2ccf5b-0x14e,_0x1165fc-0x10b);}var _0x44ce1f={};_0x44ce1f[_0x17945f(-0x79,-0xb0,-0x8d,0x1,0x2)]=_0x12e175[_0x474b26(0xf1,0x1cc,0x14b,0x165,0x14c)];function _0x447239(_0x8a6e7,_0x95c47e,_0x12cb57,_0x47d593,_0x4fc9b9){return _0x22f86d(_0x8a6e7-0x12a,_0x95c47e-0x161,_0x4fc9b9,_0x47d593-0x125,_0x95c47e- -0x3a5);}function _0x17945f(_0x5c83c1,_0x5764c3,_0xa73b2f,_0x247781,_0x56f162){return _0x129f7e(_0x5c83c1-0x1e8,_0x5c83c1- -0x31b,_0x247781,_0x247781-0x137,_0x56f162-0x1f1);}function _0x232dfe(_0x1bc95f,_0x1ad407,_0xa9bfd8,_0x4389aa,_0x8e6b59){return _0x22f86d(_0x1bc95f-0x13c,_0x1ad407-0xf7,_0xa9bfd8,_0x4389aa-0x1dd,_0x1bc95f- -0x26b);}_0x44ce1f[_0x17945f(0x4,-0x1a,0x8a,0x5e,-0x5e)]=_0x12e175[_0x200a76(-0x273,-0x27d,-0x2ee,-0x227,-0x2a9)];var _0x3e0b95=_0x44ce1f;if(_0x12e175[_0x447239(0xad,0xd2,0xf1,0x12a,0xb4)](_0x12e175[_0x17945f(0x6,-0x11,-0x50,0x91,0x52)],_0x12e175[_0x232dfe(0x211,0x1ba,0x29e,0x173,0x239)])){var _0x55dfee=_0x12e175[_0x200a76(-0x228,-0x277,-0x24c,-0x255,-0x1ff)][_0x200a76(-0x217,-0x1a1,-0x18a,-0x2a9,-0x196)]('|'),_0x2b0973=-0x3ef*-0x1+-0x18f*-0x11+-0x30b*0xa;while(!![]){switch(_0x55dfee[_0x2b0973++]){case'0':_0x28ad5c[_0x200a76(-0x232,-0x19e,-0x200,-0x2c0,-0x1bc)+_0x17945f(-0xb4,-0x152,-0x97,-0x104,-0x56)]=_0x1f1c2d[_0x232dfe(0x1f3,0x262,0x1b1,0x1d1,0x234)+_0x200a76(-0x2ce,-0x29c,-0x2b0,-0x340,-0x2a4)][_0x232dfe(0x149,0x14e,0x129,0x165,0x1cf)](_0x1f1c2d);continue;case'1':var _0x1f1c2d=_0x278f4f[_0x11e599]||_0x28ad5c;continue;case'2':var _0x11e599=_0x987bc4[_0x29d7c5];continue;case'3':_0x28ad5c[_0x474b26(-0x18,-0x3f,-0x12,0xc,0x42)+_0x200a76(-0x1c4,-0x128,-0x211,-0x15e,-0x149)]=_0xaf653d[_0x17945f(-0xc2,-0xcb,-0x57,-0xf5,-0x82)](_0x4a316a);continue;case'4':_0x8164b8[_0x11e599]=_0x28ad5c;continue;case'5':var _0x28ad5c=_0x5401f6[_0x17945f(-0x36,-0x16,-0xab,-0xcb,-0x9f)+_0x447239(0xd9,0x116,0x113,0xc1,0xc0)+'r'][_0x232dfe(0x1b0,0x213,0x1e0,0x143,0x166)+_0x200a76(-0x28d,-0x26a,-0x1ef,-0x2c3,-0x1fd)][_0x232dfe(0x149,0x13d,0x1c2,0x10c,0x132)](_0x340b2b);continue;}break;}}else{if(_0x1cfc6e){if(_0x12e175[_0x200a76(-0x1e4,-0x157,-0x18b,-0x14d,-0x18c)](_0x12e175[_0x17945f(0x4f,0x7,0x27,-0x17,0x2f)],_0x12e175[_0x200a76(-0x1cb,-0x193,-0x261,-0x22e,-0x1f3)]))return function(_0x777b0f){}[_0x232dfe(0x1d5,0x175,0x16e,0x148,0x13c)+_0x232dfe(0x250,0x2e0,0x1b9,0x1d4,0x2e6)+'r'](_0x3e0b95[_0x474b26(0x95,0x120,0x122,0x105,0x9a)])[_0x474b26(-0x2b,0xb3,0xcd,0xd4,0x57)](_0x3e0b95[_0x200a76(-0x216,-0x18d,-0x211,-0x180,-0x2ab)]);else{var _0x1de189=_0x1cfc6e[_0x474b26(-0x1b,-0x47,0x15,0xd4,0x57)](_0x4970bd,arguments);return _0x1cfc6e=null,_0x1de189;}}}}:function(){};return _0x58ae9d=![],_0xad8d42;}else return!![];};}(),_0x4247b6=_0x3492f1(this,function(){var _0x1ae1a9={'DzfcN':function(_0x1fdda5,_0x43fc4f){return _0x1fdda5==_0x43fc4f;},'FnhtP':function(_0x218c4a,_0x5df977){return _0x218c4a!==_0x5df977;},'KqyYT':_0x474297(0x379,0x32c,0x384,0x3e2,0x30e),'tCcKu':function(_0x16a733,_0x3f56e4){return _0x16a733===_0x3f56e4;},'dqaxm':_0x474297(0x3cc,0x378,0x3e5,0x42e,0x3c1),'KGdtk':_0x16b789(0x101,0xab,0x39,0x100,0x8c),'tRyaL':function(_0x25b1cc,_0x26a1d0){return _0x25b1cc(_0x26a1d0);},'ISzCy':function(_0x32f9f5,_0x392862){return _0x32f9f5+_0x392862;},'ycEWP':function(_0x34f369,_0x25b8bc){return _0x34f369+_0x25b8bc;},'KHPXp':_0x16b789(-0x8a,0x8,0x6e,0x71,-0x18)+_0x3d9f33(0x36f,0x2ae,0x2c9,0x311,0x35a)+_0x3d9f33(0x3d0,0x2ca,0x388,0x354,0x30e)+_0x35333e(0x2fa,0x26f,0x2a1,0x2d5,0x31b),'SRNSn':_0x16b789(0x4e,0xcd,0x43,0x6e,0x4a)+_0x474297(0x324,0x31d,0x2e9,0x336,0x34c)+_0x18f73f(0x2b9,0x22e,0x23a,0x240,0x24b)+_0x3d9f33(0x2b6,0x317,0x281,0x30e,0x2d1)+_0x3d9f33(0x35c,0x31a,0x304,0x34a,0x2db)+_0x3d9f33(0x370,0x3e9,0x3a9,0x375,0x3be)+'\x20)','hOWxe':function(_0x5ebd5b,_0x117f1c){return _0x5ebd5b===_0x117f1c;},'JuKjL':_0x18f73f(0x279,0x17f,0x1fc,0x1fe,0x18a),'BVLBI':function(_0x113875){return _0x113875();},'cvxPy':_0x474297(0x3c9,0x3f8,0x360,0x2e9,0x3e9),'WQxdP':_0x474297(0x46e,0x424,0x407,0x3f1,0x471),'DGbBX':_0x474297(0x3c5,0x35c,0x340,0x2fc,0x2b9),'OMPTZ':_0x16b789(0xac,0xdc,0x71,0x130,0xb1),'wxZhT':_0x16b789(0x1a,-0x34,-0x4e,0x69,-0x7e)+_0x35333e(0x364,0x3b2,0x378,0x2f8,0x323),'TmfzQ':_0x35333e(0x374,0x35d,0x3bb,0x3d2,0x3a9),'VxwnN':_0x35333e(0x2f8,0x384,0x2b1,0x34c,0x25a),'rRedw':function(_0x2ac62a,_0x17e093){return _0x2ac62a<_0x17e093;},'ACFIp':function(_0x3c2638,_0x5f3a34){return _0x3c2638===_0x5f3a34;},'RPnPt':_0x3d9f33(0x396,0x3ad,0x39a,0x34c,0x300),'cDvZT':_0x474297(0x31a,0x277,0x2fb,0x31e,0x302),'HobyD':_0x16b789(0x30,0xc7,0x135,0x13c,0x10a)+_0x16b789(0x38,0xa9,0x118,0x100,0x4d)+'1'},_0x5c8420=function(){function _0x499bbc(_0x5b044a,_0x332470,_0x4ac905,_0x1d71c1,_0x55f955){return _0x474297(_0x5b044a-0x7a,_0x332470-0xdc,_0x332470- -0x1fd,_0x5b044a,_0x55f955-0x44);}function _0x396f0e(_0x4020b2,_0x254852,_0x134b76,_0x479a4e,_0x369d17){return _0x35333e(_0x254852- -0x44c,_0x254852-0x13e,_0x134b76-0xe0,_0x479a4e-0xce,_0x369d17);}function _0x332e3f(_0x1ab284,_0x4ef768,_0x1e6822,_0x557f7d,_0x216d67){return _0x18f73f(_0x1ab284-0x148,_0x557f7d,_0x1ab284-0x2ad,_0x557f7d-0x8c,_0x216d67-0x8a);}function _0x49dedd(_0x49d807,_0x1a6dff,_0xc77c14,_0x458b31,_0x378296){return _0x16b789(_0x49d807-0x18a,_0x378296- -0x4f,_0xc77c14-0x1c9,_0xc77c14,_0x378296-0x146);}function _0x138724(_0x22f815,_0xb781eb,_0x27ff5b,_0x3874c7,_0x507aa5){return _0x3d9f33(_0x22f815-0x188,_0xb781eb-0x11f,_0x507aa5,_0x27ff5b-0x224,_0x507aa5-0x195);}var _0x540ff4={'bONcc':function(_0x1b7817,_0x36b174){function _0x390cf1(_0x1091fd,_0x192b70,_0x123ef0,_0x87ecc4,_0x16ebd6){return _0x3392(_0x16ebd6-0x202,_0x192b70);}return _0x1ae1a9[_0x390cf1(0x2e0,0x374,0x2e3,0x375,0x325)](_0x1b7817,_0x36b174);}};if(_0x1ae1a9[_0x49dedd(0xa5,0x21,0x20,0xbb,0x56)](_0x1ae1a9[_0x49dedd(-0x67,-0xc2,-0x10c,-0xca,-0x94)],_0x1ae1a9[_0x138724(0x4c0,0x4be,0x49a,0x4a3,0x4b1)]))_0x4bbc81[_0x49dedd(-0xaf,-0x48,-0x11,0x4c,-0x34)+_0x396f0e(-0xf6,-0x100,-0x10e,-0x62,-0x147)+_0x138724(0x559,0x552,0x50a,0x476,0x514)](_0x399fbe[_0x49dedd(0x5d,-0x21,0x68,-0x15,0x18)+_0x332e3f(0x458,0x490,0x476,0x4a7,0x4cb)]),_0x321f31[_0x396f0e(-0x84,-0xe6,-0x102,-0x62,-0x12f)+_0x499bbc(0x14f,0x1e7,0x17a,0x1ca,0x1ba)+'n']=_0x1ae793;else{var _0x52ae03;try{if(_0x1ae1a9[_0x49dedd(0x2f,-0x28,0x80,-0x31,0x8)](_0x1ae1a9[_0x49dedd(-0x9e,-0x101,-0x5c,-0xa2,-0x65)],_0x1ae1a9[_0x49dedd(-0x1b,0xcd,-0x1,0xd,0x5b)]))return![];else _0x52ae03=_0x1ae1a9[_0x49dedd(-0xeb,-0x8c,-0x6f,-0xee,-0x87)](Function,_0x1ae1a9[_0x499bbc(0x12c,0x13f,0x16c,0x15d,0xa4)](_0x1ae1a9[_0x49dedd(-0x57,-0x89,-0x120,-0x81,-0x95)](_0x1ae1a9[_0x332e3f(0x53e,0x50b,0x585,0x55d,0x522)],_0x1ae1a9[_0x396f0e(-0x9b,-0xb3,-0x142,-0x122,-0x95)]),');'))();}catch(_0x5788da){if(_0x1ae1a9[_0x499bbc(0x241,0x1b8,0x185,0x160,0x218)](_0x1ae1a9[_0x49dedd(-0x37,0x14,-0x33,-0xe3,-0x81)],_0x1ae1a9[_0x332e3f(0x447,0x4e5,0x437,0x3ff,0x3e5)]))_0x52ae03=window;else{if(_0x540ff4[_0x138724(0x582,0x4f4,0x56f,0x4f8,0x5ee)](_0x4c3c79[_0x138724(0x52d,0x614,0x586,0x53f,0x55f)+'n'],-0x2112+-0x1a17*-0x1+0x6fd))return![];}}return _0x52ae03;}},_0x3f3a8a=_0x1ae1a9[_0x3d9f33(0x403,0x3e9,0x38d,0x395,0x3bf)](_0x5c8420),_0x52d5dc=_0x3f3a8a[_0x16b789(-0x38,-0x50,-0xa9,-0x44,-0x29)+'le']=_0x3f3a8a[_0x18f73f(0x15a,0x1ad,0x17c,0x157,0x11e)+'le']||{};function _0x16b789(_0x5b16d1,_0x170e94,_0xa05258,_0x5568a3,_0x19c2bb){return _0x3392(_0x170e94- -0x14e,_0x5568a3);}function _0x35333e(_0x49c354,_0x1ccafd,_0x1262c4,_0x3ffd3b,_0x6f3462){return _0x3392(_0x49c354-0x1db,_0x6f3462);}function _0x474297(_0x4957a4,_0x46f986,_0x28d1df,_0x522d99,_0x13fda7){return _0x3392(_0x28d1df-0x1d9,_0x522d99);}var _0x5e94b0=[_0x1ae1a9[_0x3d9f33(0x27e,0x381,0x280,0x2ef,0x25a)],_0x1ae1a9[_0x474297(0x376,0x3cd,0x379,0x3af,0x2e3)],_0x1ae1a9[_0x35333e(0x336,0x368,0x39f,0x373,0x35f)],_0x1ae1a9[_0x3d9f33(0x335,0x26e,0x2e0,0x2c7,0x2e3)],_0x1ae1a9[_0x16b789(-0x4c,0xf,-0x47,-0x27,-0x12)],_0x1ae1a9[_0x35333e(0x36e,0x363,0x3b1,0x300,0x405)],_0x1ae1a9[_0x18f73f(0x1ba,0x2a6,0x254,0x2b8,0x2bf)]];function _0x18f73f(_0x592ebb,_0x145c20,_0x202ea6,_0x474a19,_0x24db9b){return _0x3392(_0x202ea6-0x7e,_0x145c20);}function _0x3d9f33(_0x1f635f,_0x2c755f,_0x465af9,_0x5bb30d,_0x45bcab){return _0x3392(_0x5bb30d-0x16d,_0x465af9);}for(var _0x1a858b=0x2*-0x2d7+-0x14c3+-0x7*-0x3c7;_0x1ae1a9[_0x16b789(-0xe,-0x5a,-0x3b,-0x23,-0xa9)](_0x1a858b,_0x5e94b0[_0x18f73f(0x182,0x229,0x1d6,0x1ad,0x158)+'h']);_0x1a858b++){if(_0x1ae1a9[_0x3d9f33(0x21a,0x2af,0x224,0x293,0x2c0)](_0x1ae1a9[_0x3d9f33(0x356,0x26a,0x2d5,0x2fa,0x2b5)],_0x1ae1a9[_0x16b789(-0x34,0x4c,0x83,0xd6,0xdc)])){if(_0xa94f4c){var _0x9a0f28=_0x27f2eb[_0x35333e(0x2e7,0x31f,0x271,0x364,0x266)](_0x3d5a54,arguments);return _0x4cc33b=null,_0x9a0f28;}}else{var _0x481768=_0x1ae1a9[_0x3d9f33(0x2e9,0x25e,0x32e,0x2e1,0x35f)][_0x35333e(0x3a6,0x311,0x432,0x3ec,0x3f7)]('|'),_0x3b61be=0x1*0x542+0xb6f*-0x3+0x1d0b*0x1;while(!![]){switch(_0x481768[_0x3b61be++]){case'0':var _0x287629=_0x5e94b0[_0x1a858b];continue;case'1':_0x52d5dc[_0x287629]=_0x5a0108;continue;case'2':_0x5a0108[_0x3d9f33(0x2df,0x1f6,0x287,0x264,0x1fc)+_0x35333e(0x3f9,0x452,0x37d,0x482,0x431)]=_0x3492f1[_0x35333e(0x2e1,0x333,0x36c,0x249,0x2b6)](_0x3492f1);continue;case'3':_0x5a0108[_0x35333e(0x38b,0x30c,0x3b7,0x332,0x30d)+_0x35333e(0x2ef,0x389,0x33c,0x263,0x32b)]=_0x358f02[_0x3d9f33(0x2bf,0x28e,0x334,0x31d,0x3a4)+_0x16b789(-0xa6,-0x3a,-0x2,0x63,0x44)][_0x474297(0x372,0x285,0x2df,0x322,0x266)](_0x358f02);continue;case'4':var _0x358f02=_0x52d5dc[_0x287629]||_0x5a0108;continue;case'5':var _0x5a0108=_0x3492f1[_0x16b789(0x6,0x44,0x35,0xa1,0x41)+_0x16b789(0x9c,0xbf,0x8f,0x151,0xc2)+'r'][_0x18f73f(0x1d8,0x249,0x1eb,0x239,0x213)+_0x3d9f33(0x31e,0x326,0x32e,0x2c2,0x335)][_0x474297(0x33e,0x347,0x2df,0x304,0x2ac)](_0x3492f1);continue;}break;}}}});_0x4247b6();function clickIE4(){var _0xcd81d1={};function _0x51cc86(_0x298905,_0x36012a,_0x438d76,_0x2eec01,_0x3de75b){return _0x3392(_0x438d76- -0x359,_0x298905);}_0xcd81d1[_0x41b8cc(0x228,0x2b6,0x1dd,0x242,0x25d)]=function(_0x301304,_0x22b4d6){return _0x301304==_0x22b4d6;};function _0x243f03(_0x96f3c4,_0x55229f,_0x5bb16a,_0x1c5062,_0x3477aa){return _0x3392(_0x55229f- -0x26,_0x1c5062);}_0xcd81d1[_0x1232f5(-0x1d4,-0x1bc,-0x1e8,-0x1f6,-0x19d)]=function(_0x25a5e9,_0x49e67d){return _0x25a5e9!==_0x49e67d;},_0xcd81d1[_0x41b8cc(0x151,0xd0,0x165,0x1db,0x123)]=_0x1232f5(-0x124,-0xf0,-0x11d,-0xf7,-0xfa),_0xcd81d1[_0x243f03(0x138,0x1ad,0x12e,0x114,0x178)]=_0x41b8cc(0x257,0x276,0x2d4,0x25e,0x2ef);var _0x2dce17=_0xcd81d1;function _0x1232f5(_0x53b043,_0xb88feb,_0x3e58e7,_0x13a198,_0x2a7747){return _0x3392(_0x2a7747- -0x317,_0x3e58e7);}function _0x41b8cc(_0x47b944,_0x52c3f2,_0x1a5b7c,_0x2fd15e,_0x193e6e){return _0x3392(_0x47b944-0x43,_0x2fd15e);}function _0x2d47c4(_0x2b1d74,_0x1ccb6c,_0x2e44e9,_0x4497c8,_0x327f1f){return _0x3392(_0x2e44e9- -0x36f,_0x1ccb6c);}if(_0x2dce17[_0x2d47c4(-0x1dc,-0x181,-0x18a,-0x1a9,-0x1b3)](event[_0x2d47c4(-0x208,-0x1e5,-0x17a,-0xdb,-0x192)+'n'],0x11*-0xdd+-0xc04+0x1ab3)){if(_0x2dce17[_0x51cc86(-0x1b2,-0x15b,-0x1df,-0x211,-0x266)](_0x2dce17[_0x243f03(0x121,0xe8,0x93,0x159,0xdd)],_0x2dce17[_0x243f03(0x19e,0x1ad,0x211,0x21e,0x239)]))return![];else{var _0x322dfd=_0x533e2c[_0x2d47c4(-0x247,-0x1d4,-0x263,-0x1fb,-0x2d0)](_0x1fb806,arguments);return _0x28fdbd=null,_0x322dfd;}}}function clickNS4(_0x13eab2){function _0x11f886(_0xaba28,_0x4e2bae,_0x421f6c,_0x3e675a,_0x1d46c8){return _0x3392(_0x4e2bae-0x21c,_0xaba28);}function _0x532c11(_0x26987f,_0x4500e4,_0x599be4,_0xf72c31,_0x253def){return _0x3392(_0xf72c31-0x23,_0x4500e4);}var _0xb81afe={'EJzLM':function(_0x2d1eca,_0x567cb6){return _0x2d1eca(_0x567cb6);},'ylVPk':function(_0x2e0bac,_0x2f9650){return _0x2e0bac+_0x2f9650;},'aNZlu':function(_0x560bd2,_0x311b5d){return _0x560bd2+_0x311b5d;},'ZiYBz':_0x532c11(0x11a,0x157,0x1f0,0x179,0x196)+_0x352588(-0x242,-0x1bd,-0x1d8,-0x263,-0x1fd)+_0x352588(-0x1a5,-0x208,-0x243,-0x1a4,-0x1ba)+_0x1b38af(0x37f,0x2ad,0x335,0x395,0x359),'rMqEy':_0xea4489(-0x207,-0xf3,-0x14d,-0x174,-0x100)+_0x11f886(0x3c0,0x32c,0x2e3,0x2ba,0x3b5)+_0x532c11(0x21d,0x1e3,0x1ae,0x1df,0x1ce)+_0x532c11(0x230,0x25b,0x183,0x1c4,0x174)+_0x1b38af(0x439,0x38f,0x3f3,0x3b4,0x47e)+_0x532c11(0x26e,0x1d7,0x268,0x22b,0x1dd)+'\x20)','DsEhe':_0x352588(-0x26b,-0x23d,-0x194,-0x18c,-0x1f8)+_0x532c11(0x121,0x11c,0x130,0x122,0xc7)+_0x532c11(0x110,0xcf,0x11b,0x158,0x119)+')','tipqn':_0xea4489(-0x1eb,-0x292,-0x27c,-0x20a,-0x26f)+_0x11f886(0x324,0x37c,0x3db,0x38b,0x301)+_0xea4489(-0x1d5,-0x22f,-0x15e,-0x1bd,-0x23f)+_0x1b38af(0x3f6,0x348,0x3e7,0x3b5,0x373)+_0x1b38af(0x2ad,0x3e3,0x348,0x31f,0x2e5)+_0x11f886(0x361,0x35e,0x35b,0x3dc,0x3db)+_0x1b38af(0x39a,0x400,0x3d9,0x41c,0x3a7),'GoIwJ':_0x1b38af(0x41e,0x4b6,0x418,0x3f4,0x43b),'POWIq':function(_0x20ee07,_0x2bc3f8){return _0x20ee07+_0x2bc3f8;},'bxddP':_0xea4489(-0x1e2,-0x1e9,-0x155,-0x162,-0xdc),'ZHlCH':_0xea4489(-0x11d,-0x20e,-0x1e6,-0x17f,-0x1cf),'lNYsn':function(_0x183797){return _0x183797();},'ssFFs':function(_0x54b9a6,_0x4d1ed2,_0x3c4c8f){return _0x54b9a6(_0x4d1ed2,_0x3c4c8f);},'HeauU':function(_0x1d61a9,_0x10f074){return _0x1d61a9!==_0x10f074;},'zmvxs':_0x532c11(0xf1,0x1f9,0x1e4,0x185,0x13f),'FsLZT':function(_0x2f439d,_0x268a08){return _0x2f439d==_0x268a08;},'BGpXG':function(_0x9073b0,_0x38ebbe){return _0x9073b0==_0x38ebbe;},'vqLri':function(_0x26b39a,_0x23fbca){return _0x26b39a===_0x23fbca;},'TWSjS':_0xea4489(-0x1e8,-0x30d,-0x1fb,-0x276,-0x301)};function _0xea4489(_0x439032,_0x2c90b6,_0x1d8a24,_0x837210,_0x3a47b2){return _0x3392(_0x837210- -0x38f,_0x439032);}function _0x352588(_0x3af6dd,_0x4ffea1,_0x3db9f9,_0x25dadb,_0x35d367){return _0x3392(_0x35d367- -0x3a1,_0x25dadb);}function _0x1b38af(_0x187ce3,_0x1d3fbc,_0x4e134d,_0x2b5a29,_0x4ebc9f){return _0x3392(_0x4e134d-0x216,_0x187ce3);}if(document[_0x352588(-0x21c,-0x20a,-0x25e,-0x1e9,-0x1eb)+'s']||document[_0x11f886(0x49f,0x426,0x471,0x41a,0x38d)+_0x532c11(0x214,0x1c3,0x1f9,0x227,0x251)+_0xea4489(-0x20e,-0x1fa,-0x193,-0x1a4,-0x16d)]&&!document[_0x532c11(0x258,0x236,0x26d,0x23d,0x205)]){if(_0xb81afe[_0xea4489(-0x196,-0x1bc,-0x117,-0x17e,-0x1c6)](_0xb81afe[_0x532c11(0x122,0x1ba,0xf8,0x14c,0xfe)],_0xb81afe[_0xea4489(-0x29b,-0x2f0,-0x20d,-0x266,-0x2c2)]))_0x135985=cocuHE[_0xea4489(-0x29e,-0x1a0,-0x184,-0x21f,-0x25e)](_0x1b8578,cocuHE[_0xea4489(-0x21c,-0x222,-0x1fb,-0x28b,-0x2dd)](cocuHE[_0x1b38af(0x38b,0x440,0x3da,0x3c0,0x3cf)](cocuHE[_0x1b38af(0x387,0x38d,0x36a,0x313,0x361)],cocuHE[_0x532c11(0x10b,0x168,0x194,0x14f,0x1a7)]),');'))();else{if(_0xb81afe[_0xea4489(-0x294,-0x262,-0x286,-0x29a,-0x2cc)](_0x13eab2[_0x1b38af(0x40b,0x4b9,0x435,0x479,0x493)],0x156e+-0x1ddb+0x86f)||_0xb81afe[_0xea4489(-0x15c,-0x1b8,-0x1ff,-0x1e3,-0x244)](_0x13eab2[_0x1b38af(0x496,0x45d,0x435,0x3ea,0x3ac)],-0xe32+-0xb4b*0x1+0x1980)){if(_0xb81afe[_0x352588(-0x2b2,-0x236,-0x2a4,-0x2c3,-0x248)](_0xb81afe[_0x532c11(0x1bd,0x19c,0x19c,0x1a4,0x182)],_0xb81afe[_0xea4489(-0x18e,-0x260,-0x204,-0x20e,-0x1e5)]))return![];else{var _0x1493f6={'umtBA':cocuHE[_0x1b38af(0x492,0x496,0x3f8,0x388,0x38a)],'eJahA':cocuHE[_0x1b38af(0x391,0x34f,0x369,0x352,0x31a)],'yAbcu':function(_0xe716e2,_0x48f286){function _0x2f33b0(_0x4d045e,_0xf66c93,_0x5a9b5b,_0x137eaa,_0x1bce65){return _0xea4489(_0x5a9b5b,_0xf66c93-0x199,_0x5a9b5b-0x148,_0x4d045e-0xde,_0x1bce65-0xaa);}return cocuHE[_0x2f33b0(-0x141,-0x10f,-0x163,-0x1a4,-0x123)](_0xe716e2,_0x48f286);},'PoPob':cocuHE[_0x352588(-0x28b,-0x219,-0x2fa,-0x2c1,-0x261)],'umDoT':function(_0x284ce9,_0x49f2e1){function _0x7bcbb4(_0x75d1b3,_0x20cf4f,_0x3c569b,_0x9c1a26,_0x2bcf18){return _0x11f886(_0x3c569b,_0x20cf4f-0x1a5,_0x3c569b-0x1bb,_0x9c1a26-0xab,_0x2bcf18-0x1be);}return cocuHE[_0x7bcbb4(0x4e2,0x547,0x5a2,0x4dd,0x51e)](_0x284ce9,_0x49f2e1);},'FocTD':cocuHE[_0x532c11(0x23c,0x232,0x2ad,0x244,0x255)],'IAnmj':cocuHE[_0x352588(-0x2e2,-0x28d,-0x256,-0x240,-0x2a6)],'RwcNa':function(_0x1c2c47){function _0x4eb1ae(_0x3e574d,_0x3557c3,_0x5d06a8,_0x5be83f,_0x10c849){return _0x352588(_0x3e574d-0x179,_0x3557c3-0x1cf,_0x5d06a8-0x134,_0x5be83f,_0x5d06a8-0xf1);}return cocuHE[_0x4eb1ae(-0x132,-0x11e,-0x10a,-0x125,-0x196)](_0x1c2c47);}};cocuHE[_0x352588(-0x316,-0x2e7,-0x263,-0x2ed,-0x281)](_0x2c221d,this,function(){var _0x2559ce=new _0x10768d(_0x1493f6[_0x485b26(0x406,0x417,0x3e9,0x486,0x462)]),_0x251a59=new _0x53776b(_0x1493f6[_0x1b627c(0x4b2,0x48b,0x462,0x493,0x3f3)],'i');function _0x1df8bd(_0x1f4a76,_0x4f26d2,_0x46a58f,_0x548da8,_0x4255b1){return _0x11f886(_0x4255b1,_0x46a58f- -0x484,_0x46a58f-0x10a,_0x548da8-0x16b,_0x4255b1-0x175);}var _0x25ea8b=_0x1493f6[_0x485b26(0x38b,0x3ae,0x449,0x3fc,0x3b0)](_0xb4877b,_0x1493f6[_0x532b38(0x562,0x593,0x620,0x5d0,0x537)]);function _0x532b38(_0x3fbef3,_0x3b8ca8,_0x1ca3ce,_0x6a8022,_0x326827){return _0x1b38af(_0x326827,_0x3b8ca8-0x173,_0x3b8ca8-0x1b0,_0x6a8022-0x32,_0x326827-0x1d);}function _0x485b26(_0x7b5e78,_0x29d416,_0x35e55b,_0x5d6eb1,_0x1277b9){return _0x352588(_0x7b5e78-0x119,_0x29d416-0x11e,_0x35e55b-0x5c,_0x5d6eb1,_0x1277b9-0x5e3);}function _0x2cca68(_0x20480c,_0x50f292,_0x2c5116,_0x47212a,_0x2ea150){return _0x532c11(_0x20480c-0x161,_0x47212a,_0x2c5116-0xc9,_0x50f292- -0x262,_0x2ea150-0xa0);}function _0x1b627c(_0x4cbd1e,_0xa7d521,_0x4d6769,_0x10b67c,_0x27941d){return _0x1b38af(_0x27941d,_0xa7d521-0x133,_0x4d6769-0xa5,_0x10b67c-0x1ec,_0x27941d-0x169);}!_0x2559ce[_0x485b26(0x440,0x3e0,0x3e4,0x42e,0x46d)](_0x1493f6[_0x532b38(0x55d,0x54a,0x4c0,0x4fc,0x5d3)](_0x25ea8b,_0x1493f6[_0x2cca68(-0xb6,-0x10e,-0xba,-0x15e,-0x74)]))||!_0x251a59[_0x2cca68(-0x9d,-0x14,0x2b,0x70,-0x5e)](_0x1493f6[_0x485b26(0x379,0x34f,0x3c0,0x3e4,0x3c6)](_0x25ea8b,_0x1493f6[_0x485b26(0x42b,0x4d6,0x481,0x494,0x471)]))?_0x1493f6[_0x1b627c(0x4b4,0x3ec,0x429,0x3dd,0x3d5)](_0x25ea8b,'0'):_0x1493f6[_0x1b627c(0x359,0x3c2,0x3e2,0x407,0x353)](_0x42d009);})();}}}}}function _0x3392(_0x455c60,_0x2c10c5){var _0xcd3e12=_0x3c20();return _0x3392=function(_0x37327b,_0x37b4f9){_0x37327b=_0x37327b-(0x1*0x985+0x11e7*-0x1+0x955);var _0x6dce65=_0xcd3e12[_0x37327b];return _0x6dce65;},_0x3392(_0x455c60,_0x2c10c5);}if(document[_0x4c58e4(0xe6,0x143,0xce,0xdd,0x125)+'s'])document[_0x4c58e4(0xfb,0x3d,0x81,-0x1c,-0x1c)+_0x977c8f(0x285,0x2c3,0x2c6,0x21b,0x23a)+_0x977c8f(0x2cd,0x224,0x2cd,0x216,0x242)](Event[_0x4dbb3d(0x4ae,0x542,0x524,0x487,0x4c5)+_0x4c1c83(-0x64,0x37,-0x93,-0x24,0x78)]),document[_0x1fbad8(-0x17,0x32,0xd4,0x78,0xf0)+_0x977c8f(0x279,0x2cb,0x291,0x23a,0x2d4)+'n']=clickNS4;else document[_0x1fbad8(0x19b,0x171,0x10d,0x107,0x16e)]&&!document[_0x977c8f(0x367,0x289,0x2a0,0x258,0x2d3)+_0x977c8f(0x308,0x28f,0x321,0x2cf,0x2cd)+_0x4dbb3d(0x4e4,0x519,0x4e9,0x46d,0x45d)]&&(document[_0x4c1c83(0x22,0xa6,0x92,0x3a,0x65)+_0x4c58e4(0xe8,0x177,0x123,0xe8,0x1ae)+'n']=clickIE4);document[_0x4c1c83(0xa,0xc8,0x5e,0x75,0x102)+_0x4c58e4(0x14d,0xfd,0xed,0x81,0x5d)+_0x4c58e4(0x133,0x168,0xf9,0x194,0x116)]=new Function(_0x4dbb3d(0x44f,0x484,0x44e,0x491,0x3fe)+_0x4c1c83(0x18,-0x31,0xe5,0x52,0xe7)+'se');function _0x1fbad8(_0x5d2a9d,_0x5332b7,_0xec6709,_0x29a755,_0x262bbd){return _0x3392(_0x29a755- -0x113,_0xec6709);}function _0x455c60(_0x19f6b6){function _0x4083f1(_0x3c8de1,_0x38d740,_0x4b7d14,_0x291462,_0x151b5d){return _0x4dbb3d(_0x38d740- -0x22c,_0x38d740-0x14b,_0x4b7d14-0x107,_0x291462-0x35,_0x4b7d14);}function _0x5ce1b8(_0x19fd48,_0x5d7e08,_0x583abd,_0x306ee4,_0x44febf){return _0x4c1c83(_0x19fd48-0xae,_0x5d7e08-0x16f,_0x44febf,_0x5d7e08-0x37f,_0x44febf-0x4);}var _0x35484e={'SdFFG':_0x4eba51(-0xf5,-0x10c,-0x15e,-0x115,-0x10f)+_0x4083f1(0x179,0x1cc,0x23c,0x248,0x158)+_0x4083f1(0x18c,0x202,0x17e,0x26d,0x27b)+')','JMXLN':_0x4eba51(-0x1fc,-0x1a4,-0x182,-0x1fa,-0x12f)+_0x4083f1(0x1bb,0x22d,0x244,0x2a1,0x20d)+_0x4083f1(0x220,0x29f,0x21c,0x2fa,0x21e)+_0x42819c(0xdd,0x28,0x1a,0x6c,0x2d)+_0x5ce1b8(0x3d8,0x360,0x3c6,0x31c,0x3aa)+_0x5dad3e(-0x121,-0x9d,-0x75,-0x9e,-0x90)+_0x4eba51(-0x1e1,-0xde,-0x144,-0x178,-0x169),'RWYlX':function(_0x23fdf0,_0x4eeaa8){return _0x23fdf0(_0x4eeaa8);},'qQfVX':_0x4eba51(-0x66,-0xfa,-0x105,-0x18a,-0x85),'nTOWG':function(_0x39cd29,_0x50f542){return _0x39cd29+_0x50f542;},'Uqkru':_0x5dad3e(0x15,0x4e,0x13,0xc4,0x80),'uCXYS':_0x5dad3e(-0x28,0x31,0xcc,0x48,-0x68),'syZuf':function(_0x36cf52){return _0x36cf52();},'jYsQF':function(_0x245573,_0x298111){return _0x245573===_0x298111;},'qeMUr':_0x4eba51(-0x252,-0x1d2,-0x205,-0x189,-0x210),'osuge':_0x5dad3e(-0x73,-0x95,-0x33,-0xea,-0x11c),'PAVjl':_0x5ce1b8(0x41c,0x428,0x4a5,0x49d,0x47c),'rIFSM':_0x42819c(0x4d,0xd3,-0x3e,0x4f,0xc1),'LdXaQ':function(_0x514a51,_0x52ce0d){return _0x514a51===_0x52ce0d;},'YeSvm':_0x4083f1(0x298,0x295,0x242,0x2e1,0x2f7),'YBfIi':_0x4eba51(-0x164,-0x101,-0xe3,-0xf7,-0x7c)+'g','IXRZQ':_0x4083f1(0x1a8,0x232,0x283,0x2b6,0x2bb),'rMavy':_0x4083f1(0x231,0x1cd,0x1ad,0x1d5,0x14f)+_0x4eba51(-0x1cb,-0x151,-0x148,-0xe0,-0x1d8)+_0x4083f1(0x294,0x297,0x2de,0x224,0x2d9),'EkDga':_0x5ce1b8(0x2f0,0x36c,0x3fe,0x3de,0x396)+'er','HmNhw':function(_0x2bb6f4,_0x1ed186){return _0x2bb6f4!==_0x1ed186;},'pyIPP':_0x4eba51(-0x1a7,-0x13e,-0x130,-0x143,-0x103),'Xwnxg':function(_0x512963,_0x57b28e){return _0x512963/_0x57b28e;},'ClUXo':_0x4eba51(-0x17b,-0x199,-0x1af,-0x210,-0x23a)+'h','NmNmT':function(_0x5db497,_0x34017b){return _0x5db497===_0x34017b;},'tyTwm':function(_0xbab302,_0x282440){return _0xbab302%_0x282440;},'ZQPXU':_0x5ce1b8(0x37d,0x345,0x39b,0x2c5,0x2de),'vQFHQ':_0x4083f1(0x1d0,0x1c6,0x20d,0x24e,0x146),'qQihn':function(_0x2fc6fe,_0x205524){return _0x2fc6fe+_0x205524;},'bYHCr':_0x42819c(0x40,0xb8,0x2f,0x97,0x80),'OelPv':_0x42819c(0xd5,-0x21,0xac,0x54,-0x11),'IVpdE':_0x4083f1(0x287,0x2fd,0x27b,0x355,0x316)+'n','vCZSf':function(_0x152630,_0x44af7e){return _0x152630===_0x44af7e;},'xqtZG':_0x4083f1(0x2d6,0x25b,0x294,0x1fb,0x27d),'MzwhI':function(_0x1ef463,_0x4c1d07){return _0x1ef463+_0x4c1d07;},'QSXAC':_0x4083f1(0x266,0x280,0x2a9,0x290,0x232)+_0x4eba51(-0x219,-0x142,-0x18a,-0x169,-0x11b)+'t','Uwfvy':_0x5ce1b8(0x43f,0x420,0x38c,0x3d6,0x4a3),'TmBhP':_0x4083f1(0x24d,0x201,0x1d1,0x17f,0x22a),'EBWuX':_0x4083f1(0x2c9,0x2db,0x2c5,0x339,0x28c),'IxHlc':_0x4eba51(-0x1e3,-0x131,-0x184,-0x13f,-0x16d),'yDCpg':_0x5dad3e(-0x53,-0x1a,-0xa6,-0x73,0x33)};function _0x42819c(_0x68b582,_0x40040c,_0x267e77,_0x32f669,_0x54d99b){return _0x1fbad8(_0x68b582-0x1d7,_0x40040c-0x1d2,_0x40040c,_0x32f669- -0x52,_0x54d99b-0x3);}function _0x4eba51(_0x26b94f,_0x1c4609,_0xda3750,_0x570b9d,_0x38c75f){return _0x4c58e4(_0x26b94f-0xd8,_0x38c75f,_0xda3750- -0x21f,_0x570b9d-0xc6,_0x38c75f-0x2a);}function _0x5dad3e(_0x3fa083,_0x323461,_0x4c6e4e,_0x2dbebd,_0x10abd9){return _0x4c58e4(_0x3fa083-0x1d,_0x2dbebd,_0x323461- -0xf7,_0x2dbebd-0x15d,_0x10abd9-0x92);}function _0x1712e5(_0x2807c2){function _0x461fa9(_0x20da18,_0x5d5824,_0x1f3045,_0x234400,_0x544b49){return _0x4083f1(_0x20da18-0x192,_0x20da18- -0x349,_0x234400,_0x234400-0xf8,_0x544b49-0x113);}function _0x1c6d52(_0x5761ec,_0xe82831,_0x1cabfd,_0x49c044,_0x451810){return _0x5ce1b8(_0x5761ec-0x115,_0x451810-0x13c,_0x1cabfd-0x1c6,_0x49c044-0x31,_0x1cabfd);}function _0x244c4c(_0x406f21,_0x1d70fb,_0x52e9e5,_0x5c941f,_0x2a54d8){return _0x5ce1b8(_0x406f21-0x1f2,_0x1d70fb- -0x312,_0x52e9e5-0x1c4,_0x5c941f-0x1c6,_0x2a54d8);}var _0x106415={'SBTll':_0x35484e[_0x48f605(0x57c,0x4f8,0x52c,0x535,0x569)],'CqRsz':_0x35484e[_0x48f605(0x4d8,0x54d,0x512,0x47e,0x57c)],'uuRJX':function(_0x24c998,_0x4e66a6){function _0x3d114a(_0x3cfc30,_0x99a68d,_0x4e993a,_0x483dd1,_0x35db42){return _0x461fa9(_0x3cfc30-0x292,_0x99a68d-0x1d4,_0x4e993a-0x78,_0x483dd1,_0x35db42-0x108);}return _0x35484e[_0x3d114a(0x1fc,0x287,0x21d,0x18c,0x16a)](_0x24c998,_0x4e66a6);},'iLBSU':_0x35484e[_0x1c6d52(0x511,0x55e,0x528,0x4e7,0x4e2)],'rWABO':function(_0x51c38a,_0x4d80ce){function _0x5d1e0c(_0x1f117b,_0x4cf7c9,_0x1d14a9,_0x1fd2c8,_0x43d51f){return _0x48f605(_0x43d51f,_0x4cf7c9-0x1cd,_0x1d14a9- -0x419,_0x1fd2c8-0xf8,_0x43d51f-0x1c6);}return _0x35484e[_0x5d1e0c(0xa1,0xcf,0xee,0x169,0x16f)](_0x51c38a,_0x4d80ce);},'fByfK':_0x35484e[_0x1c6d52(0x4f2,0x464,0x56f,0x545,0x4df)],'rPhtS':function(_0x270add,_0x178e46){function _0x2db684(_0x53beab,_0x9553a7,_0x2b4d75,_0x452e50,_0x269c05){return _0x946e77(_0x53beab-0x39c,_0x9553a7-0x196,_0x2b4d75-0x10,_0x2b4d75,_0x269c05-0x32);}return _0x35484e[_0x2db684(0x2b8,0x2f5,0x2eb,0x25b,0x239)](_0x270add,_0x178e46);},'StVia':_0x35484e[_0x48f605(0x45f,0x477,0x4a4,0x41c,0x432)],'qqLCu':function(_0x2bcec8){function _0x1b03e7(_0x1a4001,_0xc38c1c,_0x3e9c6c,_0xd253fd,_0x4ad159){return _0x1c6d52(_0x1a4001-0x12c,_0xc38c1c-0x8b,_0x4ad159,_0xd253fd-0x85,_0xd253fd- -0x61a);}return _0x35484e[_0x1b03e7(-0x1cf,-0x14b,-0xf1,-0x168,-0xe4)](_0x2bcec8);},'UyaBn':function(_0x3fe8b2,_0x130b55){function _0x4a22ec(_0x11cab7,_0x1e906f,_0x19d542,_0x456641,_0x40f68e){return _0x461fa9(_0x40f68e-0x52c,_0x1e906f-0xdd,_0x19d542-0xfe,_0x1e906f,_0x40f68e-0x1a7);}return _0x35484e[_0x4a22ec(0x39b,0x4b2,0x3d4,0x46f,0x430)](_0x3fe8b2,_0x130b55);},'mvuQO':_0x35484e[_0x48f605(0x505,0x3d3,0x472,0x430,0x4c8)],'Hnurr':_0x35484e[_0x1c6d52(0x575,0x56b,0x46b,0x507,0x509)],'ZjQiY':_0x35484e[_0x1c6d52(0x434,0x4f0,0x4dd,0x415,0x479)],'FQPlf':_0x35484e[_0x244c4c(0x106,0x67,0x3e,0xa4,0x60)],'gLUTS':function(_0x353f01,_0x2281e4){function _0x3dc0f0(_0x3d3642,_0x3dbb5a,_0x5ebff3,_0x110e44,_0x4d896f){return _0x461fa9(_0x3d3642- -0xf9,_0x3dbb5a-0x146,_0x5ebff3-0x61,_0x3dbb5a,_0x4d896f-0xf6);}return _0x35484e[_0x3dc0f0(-0x18f,-0x18a,-0x175,-0x142,-0x1d9)](_0x353f01,_0x2281e4);}};function _0x946e77(_0x28d99f,_0x454962,_0x2be83a,_0x156fe1,_0x2eb5a8){return _0x42819c(_0x28d99f-0xbc,_0x156fe1,_0x2be83a-0x19e,_0x28d99f- -0x173,_0x2eb5a8-0x109);}function _0x48f605(_0x1144db,_0x394b00,_0x176e33,_0x1f5555,_0x496f48){return _0x4eba51(_0x1144db-0x17f,_0x394b00-0x16e,_0x176e33-0x61a,_0x1f5555-0xc4,_0x1144db);}if(_0x35484e[_0x244c4c(0xc1,0x3d,0xe,-0x43,0xc5)](_0x35484e[_0x48f605(0x48f,0x4bf,0x44a,0x4e7,0x479)],_0x35484e[_0x461fa9(-0x145,-0x1d1,-0xe1,-0xeb,-0x165)])){if(_0x35484e[_0x244c4c(-0x4f,0x3d,0x9c,0xd8,-0x42)](typeof _0x2807c2,_0x35484e[_0x946e77(-0x197,-0x208,-0x13a,-0x118,-0x1ff)])){if(_0x35484e[_0x48f605(0x40e,0x45a,0x434,0x3f3,0x3dc)](_0x35484e[_0x48f605(0x4e8,0x50e,0x4c1,0x4dc,0x506)],_0x35484e[_0x946e77(-0x12a,-0x16d,-0xf5,-0x107,-0x133)]))return function(_0x201ae3){}[_0x244c4c(0xbe,0xae,0x4f,0x116,0x5e)+_0x244c4c(0x1b9,0x129,0xff,0xba,0x174)+'r'](_0x35484e[_0x1c6d52(0x563,0x5ab,0x4ff,0x54d,0x543)])[_0x48f605(0x447,0x408,0x41f,0x445,0x458)](_0x35484e[_0x461fa9(-0x114,-0xef,-0x18f,-0xa9,-0xf3)]);else{var _0x3e3df9=new _0x38e1f7(_0x106415[_0x461fa9(-0x8e,-0x124,-0x10c,-0x123,-0xd9)]),_0x11becf=new _0xcd09b3(_0x106415[_0x946e77(-0x1e5,-0x268,-0x17f,-0x15d,-0x160)],'i'),_0x1e9cb5=_0x106415[_0x946e77(-0x1d5,-0x1a6,-0x262,-0x139,-0x1e3)](_0x5b8301,_0x106415[_0x946e77(-0x16e,-0x1cd,-0x1e2,-0x13e,-0x161)]);!_0x3e3df9[_0x946e77(-0xad,-0xdb,-0xd4,-0x11c,-0x9d)](_0x106415[_0x244c4c(0x8d,0xb7,0x103,0x56,0x12d)](_0x1e9cb5,_0x106415[_0x461fa9(-0x17f,-0x192,-0x20d,-0x140,-0x115)]))||!_0x11becf[_0x461fa9(-0x51,-0x9,-0xda,-0x7c,-0xcd)](_0x106415[_0x48f605(0x475,0x414,0x41d,0x492,0x46e)](_0x1e9cb5,_0x106415[_0x244c4c(0x5b,0x78,0xaf,0x91,-0x16)]))?_0x106415[_0x946e77(-0x1d5,-0x183,-0x221,-0x1a3,-0x1a4)](_0x1e9cb5,'0'):_0x106415[_0x1c6d52(0x46a,0x3d4,0x44f,0x4aa,0x466)](_0x15adbe);}}else{if(_0x35484e[_0x1c6d52(0x50e,0x472,0x489,0x51b,0x50c)](_0x35484e[_0x244c4c(0xc5,0xc6,0x15e,0x165,0x45)],_0x35484e[_0x461fa9(-0xd2,-0x115,-0x4d,-0x12d,-0x132)])){var _0x1f11e7=_0x433152?function(){function _0x21377b(_0x5f2e03,_0xc7a518,_0x183361,_0x2795d7,_0x4ae0af){return _0x48f605(_0x2795d7,_0xc7a518-0x18,_0x5f2e03- -0xe3,_0x2795d7-0x19,_0x4ae0af-0x1b9);}if(_0x3db057){var _0x28d845=_0x941a13[_0x21377b(0x33c,0x38b,0x3bc,0x346,0x2af)](_0xaa0dcb,arguments);return _0x2740d4=null,_0x28d845;}}:function(){};return _0x41ce98=![],_0x1f11e7;}else{if(_0x35484e[_0x946e77(-0x136,-0x144,-0x1c5,-0x10b,-0xcd)](_0x35484e[_0x1c6d52(0x59e,0x50b,0x550,0x508,0x55e)]('',_0x35484e[_0x48f605(0x413,0x3ce,0x465,0x422,0x3d4)](_0x2807c2,_0x2807c2))[_0x35484e[_0x1c6d52(0x556,0x594,0x536,0x52c,0x56a)]],0x110d+0x12e4+-0x23f0)||_0x35484e[_0x48f605(0x4cd,0x455,0x477,0x486,0x4df)](_0x35484e[_0x48f605(0x508,0x421,0x4a9,0x4d2,0x4c7)](_0x2807c2,0x1e*-0x39+0x5b*0x3b+-0xe37*0x1),0xaaf+0x1a44+-0x24f3)){if(_0x35484e[_0x946e77(-0x136,-0xb9,-0x11d,-0x19c,-0x173)](_0x35484e[_0x244c4c(0x17b,0x143,0xd2,0xfe,0x143)],_0x35484e[_0x461fa9(-0xe4,-0x7f,-0x76,-0x143,-0xa9)]))(function(){function _0x4ce15c(_0x53769e,_0x337379,_0x123903,_0x251326,_0x22bc04){return _0x244c4c(_0x53769e-0x1ed,_0x22bc04-0x56,_0x123903-0x1ac,_0x251326-0xae,_0x337379);}function _0x3b0347(_0x1f1b26,_0x281bca,_0x1c8f7d,_0x2f155a,_0x5153ed){return _0x48f605(_0x1f1b26,_0x281bca-0xfe,_0x5153ed- -0x1fc,_0x2f155a-0x16,_0x5153ed-0xb8);}function _0x1a6d1e(_0x13c469,_0x474962,_0x589a40,_0x33c9a0,_0x5dbd31){return _0x946e77(_0x33c9a0-0x506,_0x474962-0x169,_0x589a40-0x1e7,_0x5dbd31,_0x5dbd31-0xbd);}function _0x3bb19e(_0x32b17b,_0x1f71bb,_0x271511,_0x5831cf,_0x3cb978){return _0x48f605(_0x271511,_0x1f71bb-0x128,_0x5831cf- -0xb2,_0x5831cf-0xd8,_0x3cb978-0xd3);}if(_0x106415[_0x3b0347(0x2b9,0x381,0x391,0x2a3,0x2fb)](_0x106415[_0x4ce15c(0x12d,0x114,0x232,0x1fc,0x194)],_0x106415[_0x3bb19e(0x2ce,0x317,0x302,0x357,0x32a)])){var _0x168cdc=_0x2044d0[_0x4ce15c(0x24,0xeb,0xdb,0x15,0x7e)](_0x568e80,arguments);return _0xf030af=null,_0x168cdc;}else return!![];}[_0x461fa9(-0xea,-0x110,-0x6e,-0x5e,-0xe6)+_0x1c6d52(0x505,0x5ba,0x575,0x58d,0x577)+'r'](_0x35484e[_0x1c6d52(0x43c,0x457,0x501,0x4ab,0x475)](_0x35484e[_0x1c6d52(0x45e,0x463,0x4d2,0x410,0x4a3)],_0x35484e[_0x461fa9(-0xf2,-0x121,-0x9b,-0x178,-0xd0)]))[_0x48f605(0x450,0x496,0x4e2,0x51a,0x557)](_0x35484e[_0x48f605(0x4b7,0x559,0x4cb,0x4e4,0x479)]));else{var _0x5131e2=_0x352e56?function(){function _0x166cdb(_0x3e0028,_0x24a2e9,_0x394031,_0x2c6e3a,_0xb7e067){return _0x461fa9(_0x394031- -0x95,_0x24a2e9-0x76,_0x394031-0x1d7,_0xb7e067,_0xb7e067-0x18a);}if(_0x185409){var _0x2e7c29=_0x7126fa[_0x166cdb(-0x1cb,-0x265,-0x205,-0x285,-0x220)](_0x387a60,arguments);return _0x5e5136=null,_0x2e7c29;}}:function(){};return _0x4bbbbd=![],_0x5131e2;}}else{if(_0x35484e[_0x461fa9(-0xec,-0xd8,-0x6e,-0x116,-0xbb)](_0x35484e[_0x1c6d52(0x45c,0x400,0x3ec,0x435,0x482)],_0x35484e[_0x48f605(0x3a0,0x4b8,0x42b,0x459,0x4a1)]))(function(){function _0x57b552(_0x4d2bfb,_0x3f3401,_0x2fcc0d,_0x1aac85,_0x10718d){return _0x461fa9(_0x3f3401-0x5b4,_0x3f3401-0x16a,_0x2fcc0d-0x107,_0x10718d,_0x10718d-0x18e);}function _0x3f94dd(_0x2d89da,_0x348e90,_0xba98cb,_0x4181f3,_0xc1fac1){return _0x946e77(_0x2d89da-0x313,_0x348e90-0x1a7,_0xba98cb-0x5a,_0xba98cb,_0xc1fac1-0xe9);}function _0x347b19(_0x2d6575,_0x1bc7cc,_0x21c5d9,_0x33fd51,_0x53415b){return _0x461fa9(_0x33fd51- -0x7c,_0x1bc7cc-0x1e5,_0x21c5d9-0x10d,_0x53415b,_0x53415b-0xd7);}function _0x3d12dc(_0x4e67a9,_0x4a5334,_0x16c35a,_0x4e520b,_0x494570){return _0x461fa9(_0x4e520b-0x1ce,_0x4a5334-0x145,_0x16c35a-0x2b,_0x4e67a9,_0x494570-0x116);}if(_0x106415[_0x3f94dd(0x21f,0x1f1,0x292,0x1b6,0x186)](_0x106415[_0x3f94dd(0x175,0xf0,0x20d,0x18f,0xe4)],_0x106415[_0x347b19(-0x1db,-0xf0,-0x192,-0x163,-0x112)])){if(_0x3620da){var _0x5f349e=_0x576c2e[_0x347b19(-0x1b9,-0x160,-0x169,-0x1ec,-0x1d8)](_0x1a35a6,arguments);return _0x420795=null,_0x5f349e;}}else return![];}[_0x461fa9(-0xea,-0x9a,-0x182,-0xbc,-0x166)+_0x1c6d52(0x4f3,0x616,0x5e1,0x505,0x577)+'r'](_0x35484e[_0x1c6d52(0x5d5,0x5b1,0x4ee,0x4ed,0x556)](_0x35484e[_0x946e77(-0x19f,-0x18b,-0x17d,-0x20c,-0x1f2)],_0x35484e[_0x946e77(-0x14e,-0x137,-0x1c7,-0x11e,-0x185)]))[_0x244c4c(0x7,0x28,-0x33,0x94,-0x32)](_0x35484e[_0x461fa9(-0x11e,-0x141,-0xd2,-0x145,-0x12d)]));else{var _0x3d335f=_0x43934c?function(){function _0x4727c7(_0x31c1ef,_0x4da276,_0x47ba29,_0x2d1d8f,_0x4693c3){return _0x244c4c(_0x31c1ef-0x9a,_0x47ba29- -0xa7,_0x47ba29-0x2f,_0x2d1d8f-0x17,_0x2d1d8f);}if(_0x1a8de9){var _0x4b1980=_0x2a6bf2[_0x4727c7(-0x77,-0xa5,-0x7f,-0xbf,-0x3e)](_0x39e17e,arguments);return _0x182a72=null,_0x4b1980;}}:function(){};return _0x41780e=![],_0x3d335f;}}}}_0x35484e[_0x244c4c(0x125,0x102,0x10e,0x10a,0xa5)](_0x1712e5,++_0x2807c2);}else _0x106415[_0x48f605(0x519,0x589,0x51a,0x4e8,0x56e)](_0x336ca0,'0');}try{if(_0x35484e[_0x4083f1(0x1f0,0x26f,0x250,0x1d2,0x279)](_0x35484e[_0x42819c(-0x7,-0x87,-0xaf,-0x41,0x14)],_0x35484e[_0x4eba51(-0x212,-0x208,-0x1e3,-0x25b,-0x246)]))(function(){return!![];}[_0x5ce1b8(0x361,0x3c0,0x364,0x336,0x32a)+_0x4eba51(-0x115,-0x14c,-0xfa,-0xdb,-0x6e)+'r'](_0x35484e[_0x5ce1b8(0x3d4,0x41a,0x413,0x440,0x443)](_0x35484e[_0x5ce1b8(0x3c9,0x367,0x352,0x37e,0x3c4)],_0x35484e[_0x4eba51(-0x1af,-0x216,-0x17d,-0x1cc,-0xfd)]))[_0x5ce1b8(0x468,0x3fd,0x3b1,0x435,0x3bb)](_0x35484e[_0x5dad3e(0x17,-0x27,0x23,-0x82,0x1f)]));else{if(_0x19f6b6){if(_0x35484e[_0x5ce1b8(0x394,0x3be,0x35a,0x37d,0x39c)](_0x35484e[_0x4eba51(-0x16c,-0x142,-0x145,-0x193,-0x13e)],_0x35484e[_0x5dad3e(-0x3d,-0x48,0x4c,0x1e,-0x16)]))_0x19ef6f[_0x5dad3e(-0x79,-0x54,-0x32,-0x35,-0x8a)+_0x5dad3e(0x89,0x2c,0x5e,-0x2f,-0x13)+'n']=_0x550b5c;else return _0x1712e5;}else _0x35484e[_0x5ce1b8(0x441,0x3be,0x386,0x3bf,0x343)](_0x35484e[_0x5ce1b8(0x34e,0x3b6,0x434,0x38e,0x3f7)],_0x35484e[_0x5ce1b8(0x44e,0x3e0,0x434,0x387,0x3c6)])?_0x35484e[_0x5dad3e(-0x42,-0x97,0x6,-0x36,-0x6d)](_0x4ff2e9):_0x35484e[_0x5dad3e(0x17,0x7,0x45,0xa1,0x80)](_0x1712e5,0x180f+-0x177e+-0x91);}}catch(_0x3e268f){}}
+
+    </script>
